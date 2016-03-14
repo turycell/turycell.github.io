@@ -68,10 +68,11 @@
 
 		<div id="form">
 			<img src="http://i.neoseeker.com/mgv/17692/692/33/mtglogo_display3swSY5_display.png">
-			<input type="file" id="tournament_file"/>
+			<input type="file" id="tournament_file" accept=".wer" multiple/>
 			<button onclick="loadFile()">Carica torneo</button>
 			<button onclick="createLeagueStandings()">Elabora classifica</button>
-			<input type="checkbox" id="fullStandings"/>Tabellone completo 
+			<input type="checkbox" id="fullStandings"/>Tabellone completo
+			<button onclick="deleteAll()">Cancella tutto</button>
 		</div>
 
 		<div id="tournament_list">
@@ -109,15 +110,38 @@
 				}
 			}
 
+			function deleteAll()
+			{
+				var r = confirm("Sei sicuro di voler cancellare etutti i tornei? Questa operazione non pu\362 essere annullata.")
+
+				if (r == true) {
+					allPlayers = []
+					allTournaments = []
+
+					tournaments = document.getElementById("tournament_list").getElementsByTagName("div")
+
+					for (i = tournaments.length - 1; i >= 0; i--)
+						tournaments[i].parentNode.removeChild(tournaments[i])
+
+					to_remove = document.getElementById("standings")
+					if(to_remove) to_remove.parentNode.removeChild(to_remove)
+
+					localStorage.clear()
+				}
+			}
+
 			function loadFile()
 			{
-				var f = document.getElementById("tournament_file").files[0]
-				var reader = new FileReader()
-				reader.onload = function(event) { 
-					parseTournamentFile(event.target.result)
-				}
+				for (i = 0; i < document.getElementById("tournament_file").files.length; i++)
+				{
+					var f = document.getElementById("tournament_file").files[i]
+					var reader = new FileReader()
+					reader.onload = function(event) {
+						parseTournamentFile(event.target.result)
+					}
 
-				reader.readAsText(f);			
+					reader.readAsText(f);
+				}
 			}
 
 			function parseTournamentFile(wer)
