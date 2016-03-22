@@ -19,9 +19,29 @@
 			}
 
 			#form {
+				display: flex;
+				align-items: center;
 				background-color: #DDD;
 				padding: 10px;
 				border-radius: 15px 15px 0 0;
+			}
+
+			button {
+				height: 2em;
+				margin: 5px;
+			}
+
+			input {
+				height: 2em;
+				margin: 5px;
+			}
+
+			#tournament_file::-webkit-file-upload-button {
+				height: 2em;
+			}
+
+			#deleteAll {
+				margin-left: auto;
 			}
 
 			#tournament_list {
@@ -56,8 +76,26 @@
 				background-color: #EEE;
 			}
 
-			#league_standings td:last-child {
+			#league_standings tr:first-child {
+				color: white;
+				background-color: black;
 				font-weight: bold;
+			}
+
+			#league_standings td:first-child {
+				text-align: left;
+			}
+
+			#league_standings td {
+				text-align: center;
+			}
+
+			#league_standings td.total {
+				font-weight: bold;
+			}
+
+			#league_standings td.to_beat {
+				color: red;
 			}
 
 		</style>
@@ -72,7 +110,8 @@
 			<button onclick="loadFile()">Carica torneo</button>
 			<button onclick="createLeagueStandings()">Elabora classifica</button>
 			<input type="checkbox" id="fullStandings"/>Tabellone completo
-			<button onclick="deleteAll()">Cancella tutto</button>
+			<input type="checkbox" id="topResultsOnly"/>Valgono solo i migliori <input type="number" id="topResultsNumber"/> risultati
+			<button id="deleteAll" onclick="deleteAll()">Cancella tutto</button>
 		</div>
 
 		<div id="tournament_list">
@@ -348,6 +387,30 @@
 					}
 
 					allPlayers[i].totalPoints = total
+
+					/* If topResultsOnly is checked, we read the topResultsNumber textbox
+					 * and only use that many results and display the lower result. Otherwise,
+					 * we sum all of them. */
+					if (document.getElementById("topResultsOnly").checked && document.getElementById("topResultsNumber").value != "" && document.getElementById("topResultsNumber").value > 0)
+					{
+						allPlayers[i].totalPoints = 0
+						allPlayers[i].tournamentsSorted = allPlayers[i].tournaments.slice()
+
+						allPlayers[i].tournamentsSorted.sort(function(a,b) {
+							return b - a
+						});
+
+						for (k = 0; k < document.getElementById("topResultsNumber").value; k++)
+						{
+							if (allPlayers[i].tournamentsSorted[k] != undefined)
+								allPlayers[i].totalPoints += allPlayers[i].tournamentsSorted[k]
+						}
+						if (allPlayers[i].tournamentsSorted[k - 1] != undefined)
+							allPlayers[i].resultToBeat = allPlayers[i].tournamentsSorted[k - 1]
+						else
+							allPlayers[i].resultToBeat = ""
+					}
+
 				}
 
 				allPlayers.sort(function(a, b) {
@@ -356,6 +419,36 @@
 
 				var leagueStandings = document.createElement("table")
 				leagueStandings.id = "standings"
+
+				var header = document.createElement("tr")
+
+				var header_name = document.createElement("td")
+				header_name.innerHTML = "Nome"
+				header.appendChild(header_name)
+
+				if (document.getElementById("fullStandings").checked == true)
+				{
+					for (j = 0; j < allTournaments.length; j++)
+					{
+						var header_points = document.createElement("td")
+						header_points.innerHTML = j + 1
+
+						header.appendChild(header_points)
+					}
+				}
+
+				var header_total = document.createElement("td")
+				header_total.innerHTML = "Totale"
+				header.appendChild(header_total)
+
+				leagueStandings.appendChild(header)
+
+				if (document.getElementById("topResultsOnly").checked && document.getElementById("topResultsNumber").value != "" && document.getElementById("topResultsNumber").value > 0)
+				{
+					var header_total = document.createElement("td")
+					header_total.innerHTML = "Risultato da battere"
+					header.appendChild(header_total)
+				}
 
 				for (i = 0; i < allPlayers.length; i++)
 				{
@@ -384,8 +477,20 @@
 					}
 
 					var totalPoints = document.createElement("td")
+
 					totalPoints.innerHTML = allPlayers[i].totalPoints
+					totalPoints.className = "total"
 					playerRow.appendChild(totalPoints)
+
+					if (document.getElementById("topResultsOnly").checked && document.getElementById("topResultsNumber").value != "" && document.getElementById("topResultsNumber").value > 0)
+					{
+						var resultToBeat = document.createElement("td")
+
+						resultToBeat.innerHTML = allPlayers[i].resultToBeat
+						resultToBeat.className = "to_beat"
+						playerRow.appendChild(resultToBeat)
+					}
+
 					leagueStandings.appendChild(playerRow)
 				}
 
