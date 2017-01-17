@@ -62,39 +62,46 @@
 			}
 
 			#league_standings {
-				width: 70%;
+				width: 55%;
+			}
+
+			#total_played_standings {
+				width: 15%;
+			}
+
+			.standings {
 				padding: 10px;
 				margin-top: 10px;
 				float: right;
 			}
 
-			#league_standings td {
+			.standings td {
 				padding: 5px;
 			}
 
-			#league_standings tr:nth-child(odd) {
+			.standings tr:nth-child(odd) {
 				background-color: #EEE;
 			}
 
-			#league_standings tr:first-child {
+			.standings tr:first-child {
 				color: white;
 				background-color: black;
 				font-weight: bold;
 			}
 
-			#league_standings td:first-child {
+			.standings td:first-child {
 				text-align: left;
 			}
 
-			#league_standings td {
+			.standings td {
 				text-align: center;
 			}
 
-			#league_standings td.total {
+			.standings td.total {
 				font-weight: bold;
 			}
 
-			#league_standings td.to_beat {
+			.standings td.to_beat {
 				color: red;
 			}
 
@@ -118,8 +125,12 @@
 			<h2>Tornei</h2>
 		</div>
 
-		<div id="league_standings">
+		<div id="league_standings" class="standings">
 			<h2>Classifica</h2>
+		</div>
+
+		<div id="total_played_standings" class="standings">
+			<h2>Tornei giocati</h2>
 		</div>
 
 		<script type="text/javascript">
@@ -367,10 +378,14 @@
 				to_remove = document.getElementById("standings")
 				if(to_remove) to_remove.parentNode.removeChild(to_remove)
 
+				to_remove = document.getElementById("total_played")
+				if(to_remove) to_remove.parentNode.removeChild(to_remove)
+
 				for (i = 0; i < allPlayers.length; i++)
 				{
 					var total = 0;
 					allPlayers[i].tournaments = []
+					allPlayers[i].playedTournaments = 0
 
 					for (j = 0; j < allTournaments.length; j++)
 					{
@@ -382,6 +397,7 @@
 							{
 								allPlayers[i].tournaments[j] = allTournaments[j].standings[k].points
 								total += allTournaments[j].standings[k].points
+								allPlayers[i].playedTournaments++
 							}
 						}
 					}
@@ -412,6 +428,8 @@
 					}
 
 				}
+
+				/* Now we sort allPlayers[] based on totalPoints. */
 
 				allPlayers.sort(function(a, b) {
 					return b.totalPoints - a.totalPoints
@@ -496,6 +514,45 @@
 
 				document.getElementById("league_standings").appendChild(leagueStandings)
 
+				/* Now we sort allPlayers[] based on playedTournaments. */
+
+				allPlayers.sort(function(a, b) {
+					return b.playedTournaments - a.playedTournaments
+				});
+
+				var totalPlayed = document.createElement("table")
+				totalPlayed.id = "total_played"
+
+				var header = document.createElement("tr")
+
+				var header_name = document.createElement("td")
+				header_name.innerHTML = "Nome"
+				header.appendChild(header_name)
+
+				var header_total = document.createElement("td")
+				header_total.innerHTML = "Totale"
+				header.appendChild(header_total)
+
+				totalPlayed.appendChild(header)
+
+				for (i = 0; i < allPlayers.length; i++)
+				{
+					var playerRow = document.createElement("tr")
+
+					var player_name = document.createElement("td")
+					player_name.innerHTML = allPlayers[i].name
+					playerRow.appendChild(player_name)
+
+					var playedTournaments = document.createElement("td")
+
+					playedTournaments.innerHTML = allPlayers[i].playedTournaments
+					playedTournaments.className = "total"
+					playerRow.appendChild(playedTournaments)
+
+					totalPlayed.appendChild(playerRow)
+				}
+
+				document.getElementById("total_played_standings").appendChild(totalPlayed)
 			}
 
 			window.onload = loadEnvironment;
