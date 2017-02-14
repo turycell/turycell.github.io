@@ -1,0 +1,18 @@
+CACHE MANIFEST
+
+# Version: 2.4.3
+
+CACHE:
+
+index.html
+mtg-data.js
+css/styles.css
+css/jquery.autocomplete.css
+js/engine.js
+js/jquery-1.6.1.min.js
+js/jquery.autocomplete.pack.js
+img/ktimer.png
+img/ktimer-57.png
+img/ktimer-152.png
+img/copyleft.png
+lang/localFunctions.js

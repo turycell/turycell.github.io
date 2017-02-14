@@ -1,0 +1,294 @@
+<!--
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>
+			Drafting timer
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description"
+				content="An application for a judge calling a draft in a Magic game.">
+		<meta name="author" content="Denis Sokolov">
+		<meta name="robots" content="all">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css">
+		<link rev="made" href="mailto:denis@sokolov.cc">
+		<link rel="shortcut icon" href="img/ktimer.png">
+		<link rel="apple-touch-icon"  sizes="152x152" href="img/ktimer-152.png">
+		<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	</head>
+	<body>
+		<table><tr><td><div id="content">
+			<p class="loading">
+				Loading the application...
+			</p>
+			<!--if IE>
+				<p class="loading warning">
+					You are using Internet Explorer.
+					If the application never loads, it is because
+						Internet Explorer is an old, vulnerable and
+						incompatible browser.
+					Help yourself and the Internet &mdash; get a better
+						browser, like
+						<a href="http://www.google.com/chrome">Chrome</a>,
+						<a href="http://www.mozilla.com/firefox">Firefox</a>,
+						or
+						<a href="http://www.opera.com">Opera</a>.
+				</p>
+			<!endif-->
+			<ul id="steps">
+				<!--if IE>
+				<li>
+					<p>Warning!</p>
+					<p>
+						You are using Internet Explorer.
+						The browser is unbelievably unfriendly to both
+							users and developers.
+						Its behaviour is unexpected and unpredictable.
+						I give no guarantee, how the application will
+							work under this browser.
+					</p>
+					<p>
+						For the sake of yourself and the Internet, please
+							move to a better browser.
+						I advice choosing
+							<a href="http://www.google.com/chrome">Chrome</a>,
+						but there is
+							<a href="http://www.mozilla.com/firefox">Firefox</a>
+							or
+							<a href="http://www.opera.com">Opera</a>,
+							if you need other alternatives.
+					</p>
+				</li>
+				<!endif-->
+				<li>
+					<p>Hello, fellow judge, willing to call a Magic draft!</p>
+					<p>All you have to do is read the text on the screen and watch the players.</p>
+					<p>The program is controlled with a single button on the screen. Simply press a <strong>space</strong> button on your keyboard to advance.</p>
+					<button>Understood. Let&rsquo;s go!</button>
+					<p class="appname">
+						Magic drafting application version
+							<span class="version"
+								title="Released on 2016-01-25">2.4</span>.
+						<span title="The program is licensed under GPL 3">
+							<img src="img/copyleft.png" alt="Copyleft.">&nbsp;2016.
+						</span>
+						<a href="#end" title="Switch to the screen about the program">About</a>.
+						<a href="https://github.com/Akral/Drafting"
+							title="See the application’s homepage, where you can find full information on it."
+							>Homepage</a>.
+					</p>
+				</li>
+				<li id="settings">
+					<h1>Settings</h1>
+					<p>
+						<input id="s-5seconds" type="checkbox">
+						<label for="s-5seconds">
+							Warning in 5 seconds instead of 10
+						</label>
+					</p>
+					<!--
+					<p
+						title="The application will make certain sounds (like the 10-seconds beep), if this option is enabled.">
+						<input id="s-sounds" type="checkbox">
+						<label for="s-sounds">
+							Sounds
+						</label>
+					</p>
+					<p id="soundsNotFound" class="warning">
+						(I have not found any sounds.
+						<a
+							href="https://github.com/Akral/PyHtmlify/wiki/Sounds"
+							>Download them</a>
+						and <a href=>restart the application</a>.)
+					</p>
+					-->
+					<fieldset>
+						<legend>Sets:</legend>
+						<p class="setCustomizer">
+							<input id="s-set1" value="">
+							<input id="s-set2" value="">
+							<input id="s-set3" value="">
+						</p>
+					</fieldset>
+					<button>Start the draft</button>
+				</li>
+				<li id="begin">
+					<p>Welcome to the draft.</p>
+					<p>We will draft three boosters &mdash; <span class="var-set1">SET</span>, <span class="var-set2">SET</span> and <span class="var-set3">SET</span>.</p>
+					<p>Please make sure you have these three packs in front of you.</p>
+					<p>During the draft, when I say ‘Look’, you may look at the cards in your hand. I will remind you, when the time is nearly up 	and when I say ‘Pass’, you should pass your cards at once. If possible, shuffle the cards and lay them out on the table in packs of 3.</p>
+					<p>When your neighbour has passed his cards to you, pick them up, but don't look at them until I say so.</p>
+					<button>Continue</button>
+				</li>
+				<li>
+					<p>Between the boosters, you will have some time to review the cards you have drafted that far.</p>
+					<p>During the draft procedure you should stay focused on your cards and try not to give away any kind of information to your opponents.</p>
+					<button>They got it</button>
+				</li>
+				<li>
+					<p>
+						Please open the first booster, which is
+						<span class="var-set1">SET</span>, and count the cards <strong>face-down</strong>. There should be 14 cards in there.
+					</p>
+					<button>Yes, there are.</button>
+				</li>
+				<li>
+					<p>You have to pass the cards now to your <strong>left</strong>.</p>
+					<p>Prepare for the draft and stay silent.</p>
+					<button>Begin the draft.</button>
+				</li>
+				<li class="simpleBooster" title="Booster 1"></li>
+				<li>
+					<p class="pre" title="3">You now have 30 seconds to review what you have drafted.</p>
+					<var>30</var>
+					<p class="pulse" title="10">10 seconds!</p>
+					<samp>Put back the cards. Keep them in one pile.</samp>
+					<button>Done.</button>
+				</li>
+				<li>
+					<p>
+						Please open the second booster, which is
+						<span class="var-set2">SET</span>, and count the cards <strong>face-down</strong>. There should be 14 cards in there.
+					</p>
+					<p>You have to pass the cards now to your <strong>right</strong>.</p>
+					<button>Begin drafting the second booster</button>
+				</li>
+				<li class="simpleBooster" title="Booster 2"></li>
+				<li>
+					<p class="pre" title="3">You now have 45 seconds to review what you have drafted.</p>
+					<var>45</var>
+					<p class="pulse" title="10">10 seconds!</p>
+					<samp>Put back the cards. Keep them in one pile.</samp>
+					<button>Done.</button>
+				</li>
+				<li>
+					<p>
+						Please open the third booster, which is
+						<span class="var-set3">SET</span>, and count the cards <strong>face-down</strong>. There should be 14 cards in there.
+					</p>
+					<p>You have to pass the cards now to your <strong>left</strong>.</p>
+					<button>Begin drafting the third booster</button>
+				</li>
+				<li class="simpleBooster" title="Booster 3"></li>
+				<li>
+					<p>The draft is now over.</p>
+					<p>Please take your cards and proceed to your sitting place. Try to avoid giving information related to the draft to other players.</p>
+					<button>Finish.</button>
+				</li>
+				<li id="end">
+					<h1>About the program</h1>
+					<h2>Offline use</h2>
+						<p>
+							To save this application and use it offline, use
+								your browser&rsquo;s ‘File &rarr; Save Page’
+								function.
+						</p>
+						<h3>iPhone/iPad</h3>
+						<p>
+							On iOS you can &lsquo;add to homepage&rsquo;
+								the application and it will be available offline.
+						</p>
+					<h2>Credits</h2>
+						<p>
+							The program is written by
+							<a href="http://sokolov.cc/">Denis Sokolov</a>&mdash;a&nbsp;level 2 judge from Lithuania.
+						</p>
+						<p>
+							Icelandic translation made by Almar Halldorsson.
+						</p>
+						<h3>Donations</h3>
+						<p>
+							Big thanks to Almar Halldorsson for his contribution
+								supporting the development of the program.
+						</p>
+						<h3>Third party attribution</h3>
+						<p>
+							The program uses works of 
+								<a href="http://www.kde-look.org/content/show.php?content=50607">Nuno Filipe Povoa</a>,
+								<a href="http://nuovext.pwsp.net/">Alexandre Moore</a>
+								and
+								<a href="http://bassistance.de/jquery-plugins/jquery-plugin-autocomplete/">Jörn Zaefferer</a>.
+						</p>
+					<h2>Bugs and features</h2>
+						<p>
+							Please report all problems you will encounter
+								and <strong>be bold</strong> in doing so!
+							This will help fix them faster.
+						</p>
+						<p>
+							If you&rsquo;d like to see a new feature in this
+								application,
+								just say so!
+						</p>
+						<p>
+							You can contact me directly via email:
+								<span class="email">denis@sokolov.cc</span>.
+						</p>
+						<p>
+							Alternatively, if you use GitHub, feel free
+								to
+								<a href="https://github.com/Akral/Drafting/issues/new">create
+									issues there</a>.
+						</p>
+				</li>
+			</ul>
+			<div id="templates">
+				<div class="simpleBoosterStep">
+					<p class="pre" title="1">Look!</p>
+					<var></var>
+					<p class="warn pulse"></p>
+					<samp></samp>
+					<button>Done.</button>
+					<div class="info">
+						<p class="card"></p>
+						<p class="booster"></p>
+					</div>
+				</div>
+			</div>
+			<div id="vocabulary">
+				<div title="restartTimer">Restart timer</div>
+				<div title="skipTimer">Skip timer</div>
+				<div title="5seconds">5 seconds!</div>
+				<div title="10seconds">10 seconds!</div>
+				<div title="langCode">en</div>
+				<div title="passCards">Pass (N card/cards).</div>
+				<div title="cardNumber">(N) card</div>
+			</div>
+			<noscript>
+				<p>
+					The application is written in JavaScript and cannot
+						work without it. Please turn it on.
+				</p>
+				<p>
+					I appreciate your concerns about JavaScript
+						problems and security and share them.
+				</p>
+				<p>
+					However, this application really requires it, as it is
+						written completely in JavaScript.
+				</p>
+			</noscript>
+		</div></td></tr></table>
+		<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.autocomplete.pack.js"></script>
+		<script type="text/javascript" src="mtg-data.js"></script>
+		<script type="text/javascript" src="lang/localFunctions.js"></script>
+		<script type="text/javascript" src="js/engine.js"></script>
+	</body>
+</html>

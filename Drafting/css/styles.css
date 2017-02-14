@@ -1,0 +1,99 @@
+/*
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 3 of the License, or
+ *      (at your option) any later version.
+ *
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, see: <http://www.gnu.org/licenses/>
+ */
+
+@font-face {
+  font-family: 'Gothic';
+  src: url('urw-gothic-l-book-webfont.woff') format('woff'),
+       url('urw-gothic-l-book-webfont.ttf') format('truetype');
+}
+
+* { padding: 0; margin: 0 }
+
+/* Base font size */
+html { font-size: 14px }
+body {
+	/*font-family: "URW Gothic L", "Monaco", "Century Gothic",
+		Calibri, "Luicida Sans Unicode", Delicious,
+		 Georgia, Verdana, Tahoma, sans-serif;*/
+	font-family: 'Gothic', sans-serif;
+	background-color: #fff;
+	color: #444;
+	text-decoration: none;
+	word-spacing: 0.2em;
+	text-align: left;
+	line-height: 1.6em;
+	font-size: 1.5em;
+}
+button { cursor: pointer }
+fieldset { border: 0 }
+h1, h2 { margin-bottom: 1ex }
+h1 { margin-top: 4ex; font-size: 190% }
+h2 { margin-top: 3ex; font-size: 150% }
+h3 { margin-top: 2ex; font-size: 110% }
+h4 { margin-top: 1ex; font-size: 100% }
+p { margin-bottom: 1em }
+p img { vertical-align: text-top }
+ul { list-style-type: none }
+
+/* centring the box */
+	html, body { height: 100% }
+	table { width: 100%; height: 100% }
+	td { vertical-align: middle }
+	#content { min-width: 5em; max-width: 30em; margin: 0 auto }
+
+/* logic */
+	#steps li { display: none }
+	#steps li.current { display: block }
+	#templates, #vocabulary { display: none }
+
+/* positioning */
+	.timer { text-align: center }
+	#settings label { margin-left: 1ex }
+	#settings p { margin-bottom: 0.5ex }
+		.setCustomizer { text-align: center }
+		.setCustomizer input { width: 30%; text-align: center }
+	.info p:first-child { margin-bottom: 0 }
+
+
+/* appearance */
+	button { padding: 1em 2em; font-size: 150%; width: 100% }
+	kbd, var { visibility: hidden; display: block }
+	samp { display: none }
+	var { font-style: normal; font-size: 200%; margin-bottom: 1ex }
+
+	.debugMessage { position: fixed; top: 0; right: 0;
+		line-height: 1em; font-size: 12px; background-color: #FF9866; color: black;
+		padding: 0 0 1ex 1ex; margin: 0 }
+	.email { font-family: monospace }
+	.pulse { visibility: hidden; color: red; font-size: 150%; margin: 0; padding: 0; }
+	.template { color: #828300; font-style: normal }
+
+	.decosec { font-size: 50% }
+	.info { margin-top: 1ex }
+	.info,
+	.timerControls { visibility: hidden; font-size: 60%;
+		line-height: 1em; }
+	.timerControls a { opacity: 0.5; transition: opacity 0.5s }
+	.timerControls a:hover { opacity: 1 }
+
+	.appname { font-size: 60%; line-height: 1em }
+		.appname .version { font-size:120% }
+	.warning { color: #BE0000 }
+
+	.languageSelector img { cursor: pointer; border: 1px solid black; margin-right: 1em }
+
+	.update { font-size: 80%; text-align: center }
+
+	#settings .warning { font-size: 70%; line-height: 1em; margin-top: -0.5em; display: none }
