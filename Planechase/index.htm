@@ -1,0 +1,260 @@
+
+<html manifest="cache.manifest">
+
+<head>
+  <title>Planechase</title>
+  <meta charset="utf-8" />
+
+  <!-- iOS-specific stuff -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="viewport" content="user-scalable=no, width=device-width" />
+
+  <link href="images/apple/apple-touch-icon-57x57.png"   sizes="57x57"   rel="apple-touch-icon">
+  <link href="images/apple/apple-touch-icon-72x72.png"   sizes="72x72"   rel="apple-touch-icon">
+  <link href="images/apple/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
+  <link href="images/apple/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
+
+  <link href="images/apple/apple-touch-icon-120x120.png" sizes="120x120" rel="apple-touch-icon">
+  <link href="images/apple/apple-touch-icon-76x76.png"   sizes="76x76"   rel="apple-touch-icon">
+  <link href="images/apple/apple-touch-icon-152x152.png" sizes="152x152" rel="apple-touch-icon">
+
+  <!-- iPad (retina, portrait) -->
+  <link href="/images/apple/startup-iPad-Portrait.png"
+    media="(device-width: 768px) and (device-height: 1024px)
+       and (orientation: portrait)
+       and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image">
+
+  <!-- iPad (retina, landscape) -->
+  <link href="/images/apple/startup-iPad-Landscape.png"
+    media="(device-width: 768px) and (device-height: 1024px)
+       and (orientation: landscape)
+       and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image">
+
+  <!-- iPhone 5 -->
+  <link href="/images/apple/startup-iPhone5.png"
+    media="(device-width: 320px) and (device-height: 568px)
+       and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image">
+
+  <!-- iPhone (retina) -->
+  <link href="/images/apple/startup-iPhone-Retina.png"
+    media="(device-width: 320px) and (device-height: 480px)
+       and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image">
+
+  <!-- iPhone -->
+  <link href="/images/apple/startup-iPhone.png"
+    media="(device-width: 320px) and (device-height: 480px)
+       and (-webkit-device-pixel-ratio: 1)"
+    rel="apple-touch-startup-image">
+
+  <!-- iOS-specific stuff ends here -->
+  
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+
+  <section class="container">
+    <div id="card" class="flipped">
+      <figure class="front"><img id="front-picture" src="images/planes/Planechase Back.jpg" height="100%"></figure>
+      <figure class="back"><img  id="back-picture"  src="images/planes/Planechase Back.jpg" height="100%"></figure>
+    </div>
+    <div id="dice" onclick="removeDice()">
+      <img id="face" src="images/Walk.png">
+    </div>
+  </section>
+
+  <section class="options">
+    <button id="roll" onclick="rollPlanarDice()"><img src="images/Dice.png" height="120px">Roll Dice</button>
+    <button id="flip" onclick="flipCard()"><img src="images/Roll.png" height="120px">Planeswalk</button>
+  </section>
+
+  <script type="text/javascript">
+  <!--
+
+    function rollPlanarDice()
+    {
+      result = 1 + Math.floor(Math.random() * 6);
+
+      Dice = document.getElementById("dice");
+      Face = document.getElementById("face");
+      if (result == 6)
+      {
+        Face.src = "images/Walk.png";
+        document.getElementById("flip").style.display = "inline-block";
+        document.getElementById("roll").style.display = "none";
+      }
+      else if (result == 5)
+      {
+        Face.src = "images/Chaos.png"
+      }
+      else
+      {
+        Face.src = "images/Blank.png"
+      }
+      Dice.style.opacity = 1.0;
+      Dice.style.webkitTransform = "scale(1.0)";
+      Dice.style.MozTransform = "scale(1.0)";
+      Dice.style.msTransform = "scale(1.0)";
+      Dice.style.OTransform = "scale(1.0)";
+      Dice.style.transform = "scale(1.0)";
+      document.getElementById("roll").disabled = true;
+    }
+
+
+    function removeDice()
+    {
+      Dice = document.getElementById("dice");
+      Dice.style.marginLeft = "300px";
+      Dice.style.opacity = 0.0;
+      Dice.style.webkitTransform = "rotate(120deg)";
+      Dice.style.MozTransform = "rotate(120deg)";
+      Dice.style.msTransform = "rotate(120deg)";
+      Dice.style.OTransform = "rotate(120deg)";
+      Dice.style.transform = "rotate(120deg)";
+      setTimeout("resetDice()", 1000);
+    }
+
+
+    function resetDice()
+    {
+      Dice = document.getElementById("dice");
+      Dice.style.marginLeft = "-50px";
+      Dice.style.webkitTransform = "scale(3.0)";
+      Dice.style.MozTransform = "scale(3.0)";
+      Dice.style.msTransform = "scale(3.0)";
+      Dice.style.OTransform = "scale(3.0)";
+      Dice.style.transform = "scale(3.0)";
+      setTimeout(function(){document.getElementById("roll").disabled = false;}, 1000);
+    }
+
+
+    function flipCard()
+    {
+      Planes.walk();
+      removeDice();
+      document.getElementById("flip").style.display = "none";
+      document.getElementById("roll").style.display = "inline-block";
+    }
+
+
+    function Deck(cardNames)
+    {
+      this.cards = cardNames;
+    }
+
+
+    Deck.isPhenomenon = function(name)
+    {
+      var Phenomena = new Array("Chaotic Aether.jpg", "Interplanar Tunnel.jpg", "Morphic Tide.jpg", "Mutual Epiphany.jpg", "Planewide Disaster.jpg", "Reality Shaping.jpg", "Spatial Merging.jpg", "Time Distortion.jpg");
+      if (Phenomena.indexOf(name) > -1)
+      {
+          return 1;
+      }
+      else
+      {
+          return 0;
+      }
+    };
+
+
+    Deck.prototype.flipCardDown = function()
+    {
+      var Card = document.getElementById("card");
+   
+      Card.className = "flipped";
+    };
+
+
+    Deck.prototype.flipCardUp = function(plane)
+    {
+      var Card = document.getElementById("card");
+ 
+      document.getElementById("front-picture").src = "images/planes/" + plane;
+      Card.className = '';
+
+      /* Two phenomena do strange things to the planar deck. We handle them here. */
+      if(plane == "Interplanar Tunnel.jpg")
+      {
+        this.scry(5);
+      }
+
+      if(plane == "Spatial Merging.jpg")
+      {
+        this.doubleWalk();
+      }
+
+      /* If the new card is a Phenomenon, we must show the planeswalk button. */
+      if(Deck.isPhenomenon(plane))
+      {
+        document.getElementById("flip").style.display = "inline-block";
+        document.getElementById("roll").style.display = "none";
+      }
+    }
+
+
+    Deck.prototype.walk = function()
+    {
+      /* Take the top card of the library and put it on the bottom. */
+      var temp = this.cards[0];
+      var i = 0
+      while (i < this.cards.length - 1)
+      {
+        this.cards[i] = this.cards[i+1];
+        i++;
+      }
+      this.cards[i] = temp;
+
+      /* Now, update the page to show the first card. */
+      var newPlane = this.cards[0];
+      this.flipCardDown();
+      cardBackShowing = 0;
+      var that = this;
+      setTimeout(function(){that.flipCardUp(newPlane)}, 1000);
+    }
+
+
+    Deck.prototype.shuffle = function()
+    {
+      var counter = this.cards.length, temp, index;
+      while (counter > 0)
+      {
+        index = Math.floor(Math.random() * counter);
+        counter--;
+        temp = this.cards[counter];
+        this.cards[counter] = this.cards[index];
+        this.cards[index] = temp;
+      }
+    }
+
+
+    Deck.prototype.doubleWalk = function() { }
+
+    Deck.prototype.scry = function(n) {
+      /* First, we reveal cards from the top of the deck until we have revealed 5 plane cards. */
+      /* Then, we wait for a click to pick the plane to put on top of the deck. */
+      /* Last, we put the chosen plane on top and the rest of the cards on the bottom of the deck. */
+      /* Now we can enable the Planeswalk button. */
+    }
+
+	/* Interplanar Tunnel and Spatial Merging are not part of the deck currently, since they need a
+	 * special interface that doesn't exist yet. */
+
+    var Planes = new Deck (["Academy at Tolaria West.jpg", "Agyrem.jpg", "Akoum.jpg", "Aretopolis.jpg", "Astral Arena.jpg", "Bant.jpg", "Bloodhill Bastion.jpg", "Celestine Reef.jpg", "Chaotic AEther.jpg", "Cliffside Market.jpg", "Edge of Malacol.jpg", "Eloren Wilds.jpg", "Feeding Grounds.jpg", "Fields of Summer.jpg", "Furnace Layer.jpg", "Gavony.jpg", "Glen Elendra.jpg", "Glimmervoid Basin.jpg", "Goldmeadow.jpg", "Grand Ossuary.jpg", "Grixis.jpg", "Grove of the Dreampods.jpg", "Hedron Fields of Agadeem.jpg", "Horizon Boughs.jpg", "Immersturm.jpg", "Isle of Vesuva.jpg", "Izzet Steam Maze.jpg", "Jund.jpg", "Kessig.jpg", "Kharasha Foothills.jpg", "Kilnspire District.jpg", "Krosa.jpg", "Lair of the Ashen Idol.jpg", "Lethe Lake.jpg", "Llanowar.jpg", "Minamo.jpg", "Mirrored Depths.jpg", "Morphic Tide.jpg", "Mount Keralia.jpg", "Murasa.jpg", "Mutual Epiphany.jpg", "Naar Isle.jpg", "Naya.jpg", "Nephalia.jpg", "Norns Dominion.jpg", "Onakke Catacomb.jpg", "Orochi Colony.jpg", "Orzhova.jpg", "Otaria.jpg", "Panopticon.jpg", "Planewide Disaster.jpg", "Pools of Becoming.jpg", "Prahv.jpg", "Quicksilver Sea.jpg", "Ravens Run.jpg", "Reality Shaping.jpg", "Sanctum of Serra.jpg", "Sea of Sand.jpg", "Selesnya Loft Gardens.jpg", "Shiv.jpg", "Skybreen.jpg", "Sokenzan.jpg", "Stensia.jpg", "Stronghold Furnace.jpg", "Takenuma.jpg", "Talon Gates.jpg", "Tazeem.jpg", "Tember City.jpg", "The Aether Flues.jpg", "The Dark Barony.jpg", "The Eon Fog.jpg", "The Fourth Sphere.jpg", "The Great Forest.jpg", "The Hippodrome.jpg", "The Maelstrom.jpg", "The Zephyr Maze.jpg", "Time Distortion.jpg", "Trail of the Mage-Rings.jpg", "Truga Jungle.jpg", "Turri Island.jpg", "Undercity Reaches.jpg", "Velis Vel.jpg", "Windriddle Palaces.jpg"]);
+
+    Planes.shuffle();
+    Planes.walk();
+
+  //-->
+  </script>  
+
+</body>
+
+</html>

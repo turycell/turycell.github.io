@@ -1,0 +1,132 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+body {
+  position: relative; 
+  min-height: 100%;
+  margin: 20px 0;
+}
+
+.container {
+  width: 745px;
+  height: 520px;
+  position: relative;
+  margin: 0 auto 20px;
+  -webkit-perspective: 800px;
+     -moz-perspective: 800px;
+       -o-perspective: 800px;
+	  perspective: 800px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+     -moz-transition: -moz-transform 1s;
+       -o-transition: -o-transform 1s;
+	  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+	  transform-style: preserve-3d;
+  -webkit-transform-origin: left center;
+     -moz-transform-origin: left center;
+       -o-transform-origin: left center;
+          transform-origin: left center;
+}
+
+#card.flipped {
+  -webkit-transform: translateX( 100% ) rotateY( 180deg );
+     -moz-transform: translateX( 100% ) rotateY( 180deg );
+       -o-transform: translateX( 100% ) rotateY( 180deg );
+	  transform: translateX( 100% ) rotateY( 180deg );
+}
+
+#card figure {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 260px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 140px;
+  position: absolute;
+  margin: 0;
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+       -o-backface-visibility: hidden;
+	  backface-visibility: hidden;
+}
+
+#card .back {
+  -webkit-transform: rotateY( 180deg );
+     -moz-transform: rotateY( 180deg );
+       -o-transform: rotateY( 180deg );
+	  transform: rotateY( 180deg );
+}
+
+#dice {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  opacity: 0.0;
+  transition: all linear 1s;
+  -webkit-transform: scale(3.0);
+     -moz-transform: scale(3.0);
+       -o-transform: scale(3.0);
+	  transform: scale(3.0);
+}
+
+#dice img {
+  width: 100px;
+  height: 100px;
+}
+
+.options {
+  width: 745px;
+  position: relative;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+button {
+  font-size: 40px;
+  font-family: Ubuntu;
+  padding: 20px;
+  width: 100%;
+  
+  /* Prevent Safari from displaying grotesque rounded corners. */
+  -webkit-appearance: none;
+  border-radius: 5px;
+  border: 1px solid #a79d9d;
+  background-image: linear-gradient(#f7f7f7, #dddddd);
+}
+
+button, button:active, button:focus {
+  outline: 0;
+}
+
+input::-moz-focus-inner { 
+  border: 0; 
+}
+
+button img {
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+#flip {
+  display:none;
+}
