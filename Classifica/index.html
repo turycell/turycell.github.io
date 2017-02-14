@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Classifica</title>
+
+		<style media="screen" type="text/css">
+
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			img {
+				height: 50px;
+				vertical-align: middle;
+				margin-right: 50px;
+				margin-left: 10px;
+			}
+
+			#form {
+				display: flex;
+				align-items: center;
+				background-color: #DDD;
+				padding: 10px;
+				border-radius: 15px 15px 0 0;
+			}
+
+			button {
+				height: 2em;
+				margin: 5px;
+			}
+
+			input {
+				height: 2em;
+				margin: 5px;
+			}
+
+			#tournament_file::-webkit-file-upload-button {
+				height: 2em;
+			}
+
+			#deleteAll {
+				margin-left: auto;
+			}
+
+			#tournament_list {
+				width: 30%;
+				padding: 10px;
+				margin-top: 10px;
+				float: left;
+				position: relative;
+			}
+
+			#tournament_list div {
+				margin: 10px;
+			}
+
+			#tournament_list div:hover {
+				color: blue;
+				cursor: pointer;
+			}
+
+			#league_standings {
+				width: 55%;
+			}
+
+			#total_played_standings {
+				width: 15%;
+			}
+
+			.standings {
+				padding: 10px;
+				margin-top: 10px;
+				float: right;
+			}
+
+			.standings td {
+				padding: 5px;
+			}
+
+			.standings tr:nth-child(odd) {
+				background-color: #EEE;
+			}
+
+			.standings tr:first-child {
+				color: white;
+				background-color: black;
+				font-weight: bold;
+			}
+
+			.standings td:first-child {
+				text-align: left;
+			}
+
+			.standings td {
+				text-align: center;
+			}
+
+			.standings td.total {
+				font-weight: bold;
+			}
+
+			.standings td.to_beat {
+				color: red;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="form">
+			<img src="http://i.neoseeker.com/mgv/17692/692/33/mtglogo_display3swSY5_display.png">
+			<input type="file" id="tournament_file" accept=".wer" multiple/>
+			<button onclick="loadFile()">Carica torneo</button>
+			<button onclick="createLeagueStandings()">Elabora classifica</button>
+			<input type="checkbox" id="fullStandings"/>Tabellone completo
+			<input type="checkbox" id="topResultsOnly"/>Valgono solo i migliori <input type="number" id="topResultsNumber"/> risultati
+			<button id="deleteAll" onclick="deleteAll()">Cancella tutto</button>
+		</div>
+
+		<div id="tournament_list">
+			<h2>Tornei</h2>
+		</div>
+
+		<div id="league_standings" class="standings">
+			<h2>Classifica</h2>
+		</div>
+
+		<div id="total_played_standings" class="standings">
+			<h2>Tornei giocati</h2>
+		</div>
+
+		<script type="text/javascript">
+		<!--
+			var allTournaments = [];
+			var allPlayers = [];
+
+			function saveEnvironment()
+			{
+				localStorage["players"]     = JSON.stringify(allPlayers)
+				localStorage["tournaments"] = JSON.stringify(allTournaments)
+			}
+
+			function loadEnvironment()
+			{
+				allPlayers     = JSON.parse(localStorage["players"])
+				allTournaments = JSON.parse(localStorage["tournaments"])
+
+				var tournament_list = document.getElementById("tournament_list")
+
+				for(i = 0; i < allTournaments.length; i++)
+				{	
+					var new_event = document.createElement("div")
+					new_event.innerHTML = allTournaments[i].title
+					new_event.onclick = removeEvent;
+					tournament_list.appendChild(new_event)
+				}
+			}
+
+			function deleteAll()
+			{
+				var r = confirm("Sei sicuro di voler cancellare etutti i tornei? Questa operazione non pu\362 essere annullata.")
+
+				if (r == true) {
+					allPlayers = []
+					allTournaments = []
+
+					tournaments = document.getElementById("tournament_list").getElementsByTagName("div")
+
+					for (i = tournaments.length - 1; i >= 0; i--)
+						tournaments[i].parentNode.removeChild(tournaments[i])
+
+					to_remove = document.getElementById("standings")
+					if(to_remove) to_remove.parentNode.removeChild(to_remove)
+
+					localStorage.clear()
+				}
+			}
+
+			function loadFile()
+			{
+				for (i = 0; i < document.getElementById("tournament_file").files.length; i++)
+				{
+					var f = document.getElementById("tournament_file").files[i]
+					var reader = new FileReader()
+					reader.onload = function(event) {
+						parseTournamentFile(event.target.result)
+					}
+
+					reader.readAsText(f);
+				}
+			}
+
+			function parseTournamentFile(wer)
+			{
+				parser = new DOMParser();
+				xmlDoc = parser.parseFromString(wer, "text/xml");
+
+				if (xmlDoc.getElementsByTagName("parsererror").length != 0)
+				{
+					alert("Il file sembra essere corrotto, oppure non è un file WER.")
+					return
+				}
+
+				players = xmlDoc.getElementsByTagName("person");
+
+				/* First, let's see if this tournament introduces new players. */
+
+				for (i = 0; i < players.length; i++)
+				{
+					var dci_number = players[i].getAttribute("id")
+
+					for (j = 0; j < allPlayers.length; j++)
+					{
+						/* If we find the current DCI number in our player list, we do nothing. */
+						if(allPlayers[j].DCI == dci_number)
+							break;
+					}
+
+					if (j == allPlayers.length)
+					{
+						/* If we didn't find the player, let's create it. */
+						allPlayers.push({
+							DCI:  dci_number,
+							name: players[i].getAttribute("first") + " " + players[i].getAttribute("last")
+						});
+					}
+				}
+
+				/* Now, let's create an entry for this tournament. Each tournament will have two 
+				 * fields: a title and an array of couples [DCI number, total match points].
+				 */
+
+				var classifica = []
+
+				for (i = 0; i < players.length; i++)
+				{
+					classifica.push({
+						DCI:    players[i].getAttribute("id"),
+						points: 0
+					});
+				}
+
+				matches = xmlDoc.getElementsByTagName("match");
+
+				for (j = 0; j < matches.length; j++)
+				{
+					var player = matches[j].getAttribute("person");
+					var opponent = matches[j].getAttribute("opponent");
+					var outcome = matches[j].getAttribute("outcome");
+
+					/* The outcome of a given match is coded this way:
+					 *   - 1: player1 wins
+					 *   - 2: the match is a draw
+					 *   - 3: player1 was paired with a bye
+					 */
+
+					for (i = 0; i < classifica.length; i++)
+					{
+						if(classifica[i].DCI == player)
+						{
+							if (outcome == 1 || outcome == 3)
+								classifica[i].points += 3;
+							else
+								classifica[i].points += 1;
+						}
+
+						if(classifica[i].DCI == opponent)
+						{
+							if (outcome == 2)
+								classifica[i].points += 1;
+						}
+					}
+				}
+
+				/* If the tournament is in a team format, there will be no match tags.
+				 * They are replaced with tags named "teammatch". This means that we can
+				 * now parse those as well to have code that works in both cases.
+				 */
+
+				teammatches = xmlDoc.getElementsByTagName("teammatch")
+				teams = xmlDoc.getElementsByTagName("team")
+
+				function returnTeamMemebrs(teamID)
+				{
+					for(w = 0; w < teams.length; w++)
+					{
+						if (teams[w].getAttribute("id") == teamID)
+						{
+							var members = teams[w].getElementsByTagName("member")
+							var membersDCI = []
+
+							for (h = 0; h < members.length; h++)
+							{
+								membersDCI.push(members[h].getAttribute("person"))
+							}
+
+							return membersDCI
+						}
+					}
+				}
+
+				for (j = 0; j < teammatches.length; j++)
+				{
+					var team = teammatches[j].getAttribute("team");
+					var opposingteam = teammatches[j].getAttribute("opposingteam");
+					var outcome = teammatches[j].getAttribute("outcome");
+
+					/* The outcome of a given match is coded this way:
+					 *   - 1: team1 wins
+					 *   - 2: the match is a draw
+					 *   - 3: team1 was paired with a bye
+					 */
+
+					for (i = 0; i < classifica.length; i++)
+					{
+						if(returnTeamMemebrs(team).indexOf(classifica[i].DCI) > -1)
+						{
+							if (outcome == 1 || outcome == 3)
+								classifica[i].points += 3;
+							else
+								classifica[i].points += 1;
+						}
+
+						if(returnTeamMemebrs(opposingteam).indexOf(classifica[i].DCI) > -1)
+						{
+							if (outcome == 2)
+								classifica[i].points += 1;
+						}
+					}
+				}
+
+				classifica.sort(function(a, b) {
+					return b.points - a.points;
+				});
+
+				allTournaments.push({
+					title: xmlDoc.getElementsByTagName("event")[0].getAttribute("title"),
+					standings: classifica
+				})
+
+				/* Add an entry to the list of tournaments */
+
+				var tournament_list = document.getElementById("tournament_list")
+				var new_event = document.createElement("div")
+				new_event.innerHTML = xmlDoc.getElementsByTagName("event")[0].getAttribute("title")
+				new_event.onclick = removeEvent;
+				tournament_list.appendChild(new_event)
+
+				saveEnvironment()
+			}
+
+			function removeEvent()
+			{
+				origin = event.currentTarget;
+
+				list = document.getElementById("tournament_list").getElementsByTagName("div")
+
+				for(i = 0; i < list.length; i++)
+				{
+					if (list[i] == origin)
+					{
+						allTournaments.splice(i, 1)
+						origin.parentNode.removeChild(origin)
+						break
+					}
+				}
+
+				saveEnvironment()
+			}
+
+			function createLeagueStandings()
+			{
+				/* First off, we remove any other standings already displayed, is any. */
+				to_remove = document.getElementById("standings")
+				if(to_remove) to_remove.parentNode.removeChild(to_remove)
+
+				to_remove = document.getElementById("total_played")
+				if(to_remove) to_remove.parentNode.removeChild(to_remove)
+
+				for (i = 0; i < allPlayers.length; i++)
+				{
+					var total = 0;
+					allPlayers[i].tournaments = []
+					allPlayers[i].playedTournaments = 0
+
+					for (j = 0; j < allTournaments.length; j++)
+					{
+						allPlayers[i].tournaments[j] = undefined
+
+						for (k = 0; k < allTournaments[j].standings.length; k++)
+						{
+							if(allTournaments[j].standings[k].DCI == allPlayers[i].DCI)
+							{
+								allPlayers[i].tournaments[j] = allTournaments[j].standings[k].points
+								total += allTournaments[j].standings[k].points
+								allPlayers[i].playedTournaments++
+							}
+						}
+					}
+
+					allPlayers[i].totalPoints = total
+
+					/* If topResultsOnly is checked, we read the topResultsNumber textbox
+					 * and only use that many results and display the lower result. Otherwise,
+					 * we sum all of them. */
+					if (document.getElementById("topResultsOnly").checked && document.getElementById("topResultsNumber").value != "" && document.getElementById("topResultsNumber").value > 0)
+					{
+						allPlayers[i].totalPoints = 0
+						allPlayers[i].tournamentsSorted = allPlayers[i].tournaments.slice()
+
+						allPlayers[i].tournamentsSorted.sort(function(a,b) {
+							return b - a
+						});
+
+						for (k = 0; k < document.getElementById("topResultsNumber").value; k++)
+						{
+							if (allPlayers[i].tournamentsSorted[k] != undefined)
+								allPlayers[i].totalPoints += allPlayers[i].tournamentsSorted[k]
+						}
+						if (allPlayers[i].tournamentsSorted[k - 1] != undefined)
+							allPlayers[i].resultToBeat = allPlayers[i].tournamentsSorted[k - 1]
+						else
+							allPlayers[i].resultToBeat = ""
+					}
+
+				}
+
+				/* Now we sort allPlayers[] based on totalPoints. */
+
+				allPlayers.sort(function(a, b) {
+					return b.totalPoints - a.totalPoints
+				});
+
+				var leagueStandings = document.createElement("table")
+				leagueStandings.id = "standings"
+
+				var header = document.createElement("tr")
+
+				var header_name = document.createElement("td")
+				header_name.innerHTML = "Nome"
+				header.appendChild(header_name)
+
+				if (document.getElementById("fullStandings").checked == true)
+				{
+					for (j = 0; j < allTournaments.length; j++)
+					{
+						var header_points = document.createElement("td")
+						header_points.innerHTML = j + 1
+
+						header.appendChild(header_points)
+					}
+				}
+
+				var header_total = document.createElement("td")
+				header_total.innerHTML = "Totale"
+				header.appendChild(header_total)
+
+				leagueStandings.appendChild(header)
+
+				if (document.getElementById("topResultsOnly").checked && document.getElementById("topResultsNumber").value != "" && document.getElementById("topResultsNumber").value > 0)
+				{
+					var header_total = document.createElement("td")
+					header_total.innerHTML = "Risultato da battere"
+					header.appendChild(header_total)
+				}
+
+				for (i = 0; i < allPlayers.length; i++)
+				{
+					var playerRow = document.createElement("tr")
+
+					var player_name = document.createElement("td")
+					player_name.innerHTML = allPlayers[i].name
+					playerRow.appendChild(player_name)
+
+					if (document.getElementById("fullStandings").checked == true)
+					{
+						for (j = 0; j < allPlayers[i].tournaments.length; j++)
+						{
+							var points = document.createElement("td")
+							if (allPlayers[i].tournaments[j] != undefined)
+							{
+								points.innerHTML = allPlayers[i].tournaments[j]
+							}
+							else
+							{
+								points.innerHTML = "&nbsp;"
+							}
+
+							playerRow.appendChild(points)
+						}
+					}
+
+					var totalPoints = document.createElement("td")
+
+					totalPoints.innerHTML = allPlayers[i].totalPoints
+					totalPoints.className = "total"
+					playerRow.appendChild(totalPoints)
+
+					if (document.getElementById("topResultsOnly").checked && document.getElementById("topResultsNumber").value != "" && document.getElementById("topResultsNumber").value > 0)
+					{
+						var resultToBeat = document.createElement("td")
+
+						resultToBeat.innerHTML = allPlayers[i].resultToBeat
+						resultToBeat.className = "to_beat"
+						playerRow.appendChild(resultToBeat)
+					}
+
+					leagueStandings.appendChild(playerRow)
+				}
+
+				document.getElementById("league_standings").appendChild(leagueStandings)
+
+				/* Now we sort allPlayers[] based on playedTournaments. */
+
+				allPlayers.sort(function(a, b) {
+					return b.playedTournaments - a.playedTournaments
+				});
+
+				var totalPlayed = document.createElement("table")
+				totalPlayed.id = "total_played"
+
+				var header = document.createElement("tr")
+
+				var header_name = document.createElement("td")
+				header_name.innerHTML = "Nome"
+				header.appendChild(header_name)
+
+				var header_total = document.createElement("td")
+				header_total.innerHTML = "Totale"
+				header.appendChild(header_total)
+
+				totalPlayed.appendChild(header)
+
+				for (i = 0; i < allPlayers.length; i++)
+				{
+					var playerRow = document.createElement("tr")
+
+					var player_name = document.createElement("td")
+					player_name.innerHTML = allPlayers[i].name
+					playerRow.appendChild(player_name)
+
+					var playedTournaments = document.createElement("td")
+
+					playedTournaments.innerHTML = allPlayers[i].playedTournaments
+					playedTournaments.className = "total"
+					playerRow.appendChild(playedTournaments)
+
+					totalPlayed.appendChild(playerRow)
+				}
+
+				document.getElementById("total_played_standings").appendChild(totalPlayed)
+			}
+
+			window.onload = loadEnvironment;
+
+		//-->
+		</script>
+
+	</body>
+</html>
