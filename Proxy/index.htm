@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Proxy</title>
+
+		<style media="screen" type="text/css">
+
+			textarea {
+				width: 300px;
+				height: 800px;
+			}
+
+			button {
+				font-size: 48px;
+				position: absolute;
+				top: 300px;
+				left: 350px;
+			}
+
+			label {
+				width: 400px;
+				font-size: 24px;
+				position: absolute;
+				top: 8px;
+				left: 350px;
+			}
+
+			#custom_image {
+				display: none;
+			}
+
+			.card {
+				height: 314px;
+				width: 222px;
+			}
+
+		</style>
+
+		<style media="print" type="text/css">
+
+			@page
+			{
+				margin: 14mm 8mm 13mm 8mm;  
+			}
+
+			.card {
+				height: 88mm;
+				width: 63mm;
+			}
+
+		</style>
+
+	</head>
+	
+	<body>
+
+		<div id="form">
+			<label for=cardlist>Incolla nel campo a sinistra la lista delle carte che vuoi proxare. Inserisci una carta per riga, usa solo i nomi in inglese. </label>
+			<textarea id=cardlist name=cardlist required></textarea>
+			<button onclick="renderImages()">Crea proxy!</button>
+		</div>
+
+		<input type="file" id="custom_image" name="custom_image" />
+
+		<script type="text/javascript">
+		<!--
+			var target_image
+			var supported_sets = []
+
+			function httpGet(theUrl)
+			{
+				var xmlHttp = null;
+
+				xmlHttp = new XMLHttpRequest();
+				xmlHttp.open("GET", theUrl, false);
+				xmlHttp.send(null);
+				return xmlHttp.responseText;
+			}
+
+			function getExpansionSetCodes()
+			{
+				/* We only care about normal booster sets, that have the best support
+				 * on card image providers. So, we retrieve a list of all the released
+				 * sets and pick only the ones with new cards in them. */
+
+				var all_sets = httpGet("https://api.deckbrew.com/mtg/sets")
+				var set_list = JSON.parse(all_sets)
+
+				for (i = 0; i < set_list.length; i++)
+				{
+					if (set_list[i].type == "core" || set_list[i].type == "expansion" || set_list[i].type == "commander" || set_list[i].type == "conspiracy")
+					{
+						supported_sets.push(set_list[i].id)
+					}
+				}
+			}
+
+			function selectPicture(cards)
+			{
+				/* We only care about normal booster sets, that have the best support
+				 * on card image providers. */
+				/* Let's use a card back as the default image. If we encounter an
+				 * error somewhere, we will use this. */
+
+				img = 'mtg-card-back.png';
+
+			   /* Let's hard code some cool pictures for the basic lands. */
+
+			   switch (cards.name)
+			   {
+					case "Plains":
+						img = "https://magidex.com/extstatic/card/UNH/plains.jpg";
+						return img;
+
+					case "Island":
+						img = "https://magidex.com/extstatic/card/UNH/island.jpg";
+						return img;
+
+					case "Swamp":
+						img = "https://magidex.com/extstatic/card/UNH/swamp.jpg";
+						return img;
+
+					case "Mountain":
+						img = "https://magidex.com/extstatic/card/UNH/mountain.jpg";
+						return img;
+
+					case "Forest":
+						img = "https://magidex.com/extstatic/card/UNH/forest.jpg"
+						return img;
+
+					default:
+						break;
+			   }
+
+				for (i = 0; i < cards.editions.length; i++)
+				{
+					var set_code = cards.editions[i].set_id
+
+					if (supported_sets.indexOf(set_code) != -1)
+					{
+						img = 'https://magidex.com/extstatic/card/' + set_code + '/' + cards.name.toLowerCase().replace("\u00e6", "ae") + '.jpg'
+						return img;
+					}
+				}
+
+				/* If Magidex doesn't have it, it's probably from a very recently
+				 * released set. Let's go straight to Gatherer, even though the
+				 * resolution is abysmal. */
+
+				for (i = 0; i < cards.length; i++)
+				{
+					var id = cards.editions[i].multiverseid;
+
+					if (id != 0)
+					{
+						img = 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=' + id + '\u0026type=card';
+						return img;
+					}
+				}
+			}
+
+			function injectPicture(name)
+			{
+				/* Query the remote database, that returns an array of cards in
+				 * JSON format as a single string. Sadly, it only accept the old
+				 * "Æther" spelling, which exactly noone will be using. */
+				var matching_cards = httpGet("https://api.deckbrew.com/mtg/cards?name=" + name.replace(/Aether/g, "Æther"));
+
+				if (matching_cards != "[]")
+				{
+					/* Parse the string to convert it into an actual array of JSON 
+					 * objects. */
+					var cards = JSON.parse(matching_cards);
+
+					if (cards != null)
+					{
+						/* Let's cross the result array to see if there is an exact
+						 * match. If there is none, we use the first result. */
+						for(i = 0; i < cards.length; i++)
+							 if (cards[i].name == name) break;
+
+						i%= cards.length;
+
+						var img = document.createElement('img');
+
+						img.className = "card";
+						img.id = cards[i].name;
+						img.src = selectPicture(cards[i]);
+
+						img.addEventListener('click', function (e) {
+							target_image = e.target;
+							document.getElementById("custom_image").click();
+						})
+
+						document.body.appendChild(img);
+					}
+				}
+				else
+				{
+					var img = document.createElement('img');
+
+					img.className = "card";
+					img.id = name;
+					img.src = 'mtg-card-back.png';
+
+					img.addEventListener('click', function (e) {
+						target_image = e.target;
+						document.getElementById("custom_image").click();
+					})
+
+					document.body.appendChild(img);	
+				}
+			}
+		
+			function renderImages()
+			{
+				getExpansionSetCodes()
+				var lines = document.getElementById('cardlist').value.split('\n');
+
+				for(var i = 0; i < lines.length; i++)
+				{
+					injectPicture(lines[i]);
+				}
+				
+				document.getElementById('form').style.display = "none";
+				document.getElementById('custom_image').style.display = "none";
+			}
+
+			function handleFileSelect(evt) {
+				var f = evt.target.files[0];
+
+				// Only process image files.
+				if (f.type.match('image.*')) {
+
+					var reader = new FileReader();
+
+					// Closure to capture the file information.
+					reader.onload = (function(theFile) {
+						return function(e) {
+							
+							target_image.src=e.target.result;
+						};
+					})(f);
+
+					// Read in the image file as a data URL.
+					reader.readAsDataURL(f);
+				}
+			}
+
+			document.getElementById("custom_image").addEventListener('change', handleFileSelect, false);
+
+		//-->
+		</script>
+
+	</body>
+</html>
