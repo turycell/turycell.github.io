@@ -1,0 +1,226 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+meter {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  height: 0.5em;
+  float: left;
+  width: 500px;
+
+  /* Applicable only to Firefox */
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+meter::-webkit-meter-optimum-value {
+    transition: width .4s linear;
+}
+
+/* Webkit based browsers 
+meter[value="10"]::-webkit-meter-optimum-value { background: red; }
+meter[value="20"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="30"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="40"]::-webkit-meter-optimum-value { background: green; }*/
+
+/* Gecko based browsers 
+meter[value="10"]::-moz-meter-bar { background: red; }
+meter[value="20"]::-moz-meter-bar { background: yellow; }
+meter[value="30"]::-moz-meter-bar { background: orange; }
+meter[value="40"]::-moz-meter-bar { background: green; }*/
+
+.general {
+	display: inline;
+	width: 100px;
+}
+
+.GeneralDamage {
+	position: absolute;
+	right: 0;
+	top: 0;
+	float: left;
+	font-size: 30px;
+	font-family: "Beleren";
+	text-shadow: 0 1px 0 #3f7ca0;
+	background-color: #FFF;
+	padding: 5px;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.SmallGeneral {
+	height: 40px;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.SmallGeneralDamage {
+    display: inline;
+}
+
+.name {
+	width: 500px;
+	display: inline-block;
+	font-size: 50px;
+	font-family: "Beleren";
+	margin: 5px;
+	text-align: left;
+	text-shadow: 0 1px 0 #3f7ca0;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+
+.number {
+	display: inline;
+	position: relative;
+	vertical-align: middle;
+	font-size: 75px;
+	font-family: "Beleren";
+	margin: 5px;
+	text-align: left;
+	text-shadow: 0 1px 0 #3f7ca0;
+	overflow: visible;
+	white-space: nowrap;
+	float: right;
+}
+
+.poison {
+	font-size: 25px;
+	color: green;
+	position: absolute;
+	bottom: -10px;
+	right: 5px;
+	margin: 0;
+	display: none;
+}
+
+.damage-dealt {
+	display: inline;
+	vertical-align: middle;
+	font-size: 75px;
+	font-family: "Beleren";
+	margin: 5px;
+	text-align: left;
+	text-shadow: 0 1px 0 #3f7ca0;
+	overflow: visible;
+	white-space: nowrap;
+}
+
+.box {
+	padding: 10px;
+	max-width: 768px;
+}
+
+.box:nth-child(odd) {
+	background-color: #EEE;
+}
+
+.box:nth-child(even) {
+	background-color: #FFF;
+}
+
+.adjust-life {
+ 	display: flex;
+ 	justify-content: space-between;
+}
+
+.pick-general {
+ 	display: flex;
+ 	justify-content: space-between;
+ 	flex-wrap: wrap;
+ 	clear: both;
+ 	display: none;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]:checked + .ButtonBlue {
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	background-color:#fe1a00;
+	border:1px solid #d83526;
+	text-shadow:1px 1px 0px #b23e35;
+}
+
+#check_general:checked ~ .pick-general {
+   display: flex !important;
+}
+
+label {
+	float: left;
+	padding: 0px !important;
+}
+
+label img {
+	height: 72px;
+	text-align: center; 
+	margin: 0px;
+	padding: 0px;
+	border: 0px none;
+	outline: 0px none;
+}
+
+#confirm {
+	padding: 0;
+	float: right;
+	height: 72px;
+	width: 72px;
+}
+
+#confirm img {
+	height: 72px;
+	text-align: center; 
+	margin: 0px;
+	padding: 0px;
+	border: 0px none;
+	outline: 0px none;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.ImageSelector {
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+}
+
+.ImageSelector:hover {
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+}
+
+input[type=radio]:checked + .ImageSelector {
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+}
+
+.ImageSelector img {
+	margin-top: 10px;
+	border-radius: 6px;
+}

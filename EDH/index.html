@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Commander Score</title>
+	<meta charset="utf-8">
+
+	<!-- iOS-specific stuff -->
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<link href="images/apple/apple-touch-icon-57x57.png" sizes="57x57" rel="apple-touch-icon">
+	<link href="images/apple/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon">
+	<link href="images/apple/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
+	<link href="images/apple/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
+
+	<link rel="apple-touch-startup-image" media="(device-width: 320px)"
+	      href="images/apple/startup-iPhone.jpg">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)"
+	      href="images/apple/startup-iPhone-RETINA.jpg">
+	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)"
+	      href="images/apple/startup-iPad-Portrait.jpg">
+	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)"
+	      href="images/apple/startup-iPad-Landscape.jpg">
+
+	<!-- iOS-specific stuff ends here -->
+
+	<link href="Style.css" rel="stylesheet" type="text/css">
+	<link href="Callout.css" rel="stylesheet" type="text/css">
+	<link href="Popover.css" rel="stylesheet" type="text/css">
+	<link href="meter.css" rel="stylesheet" type="text/css">
+	<link rel="icon" type="image/jpg" href="favicon.jpg" />
+
+	<script language="Javascript" src="Library/Autosuggest/autosuggest.js"></script>
+	<script language="Javascript" src="Popover.js"></script>
+	<script language="Javascript" src="Players.js"></script>
+	<script language="Javascript" src="meter.js"></script>
+</head>
+
+<body background="images/dark.png" onload=window.resizeTo(1024,768)>
+
+<script type="text/javascript">
+<!--
+
+var GeneralSelected = 0;
+
+var PlayersArray = new Array();
+
+function PlayerEntry(id, name, general) {
+	this.id = id;
+	this.name = name;
+	this.general = general;
+}
+
+function parseGeneralsList(e)
+{
+	/* e.target.result hosts the entire content of the file */
+
+	/* We split the text into an array of lines */
+	var lines = e.target.result.split('\n');
+
+	for (var i = 0; i < lines.length; i++) {
+		tempGeneral = lines[i].split(";");
+		Generals[i] = tempGeneral[0];
+		alert(tempGenerals[0]);
+	}
+}
+
+function loadFile(fileName)
+{
+	/* Load the file with the picture/name couples */
+	var reader = new FileReader();
+
+	/* After the read is complete, the onload event of the FileReader is fired,
+	 * and its result attribute can be used to access the file data. */
+
+	/* Assign a handler to capture the file information. */
+	reader.onload = parseGeneralsList;
+
+	reader.readAsText(fileName);
+}
+
+//window.setTimeout("loadFile(Generals/Generals-flip.txt)", 1000);
+
+//-->
+</script>
+
+<div id="autosuggest"><ul></ul></div>
+
+<div id="main">
+
+	<div id="players"></div>
+
+	<div class="player">
+		<div onclick="drawDialog()" style="background: transparent;">
+			<img src="images/blank.jpg"/>
+			<div id="add"><p></p></div>
+		</div>
+	</div>
+
+	<!--
+	<div class="callout border-callout" id="start-here">
+	Click here to begin adding players.
+	<b class="border-notch notch"></b>
+	<b class="notch"></b>
+	</div>
+	<button class="ButtonBlue BigButton" id="Start" onclick="document.getElementById('main').style.top='100%'">Start game!</button>
+	-->
+	<button class="ButtonBlue BigButton" id="Start" onclick="startGame()">Start game!</button>
+	<button class="ButtonRed BigButton" id="Clear" onclick="confirmRemoveAll(this.id)">Delete all</button>
+
+</div>
+
+</body>
+
+</html>

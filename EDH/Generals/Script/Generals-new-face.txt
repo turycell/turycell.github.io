@@ -1,0 +1,408 @@
+http://magiccards.info/scans/en/isd/23.jpg;Mikaeus, the Lunarch
+http://magiccards.info/scans/en/isd/213.jpg;Geist of Saint Traft
+http://magiccards.info/scans/en/isd/214.jpg;Grimgrin, Corpse-Born
+http://magiccards.info/scans/en/isd/215.jpg;Olivia Voldaren
+http://magiccards.info/scans/en/fvl/1.jpg;Cao Cao, Lord of Wei
+http://magiccards.info/scans/en/fvl/2.jpg;Captain Sisay
+http://magiccards.info/scans/en/fvl/3.jpg;Doran, the Siege Tower
+http://magiccards.info/scans/en/fvl/4.jpg;Kiki-Jiki, Mirror Breaker
+http://magiccards.info/scans/en/fvl/5.jpg;Kresh the Bloodbraided
+http://magiccards.info/scans/en/fvl/7.jpg;Omnath, Locus of Mana
+http://magiccards.info/scans/en/fvl/8.jpg;Oona, Queen of the Fae
+http://magiccards.info/scans/en/fvl/9.jpg;Progenitus
+http://magiccards.info/scans/en/fvl/10.jpg;Rafiq of the Many
+http://magiccards.info/scans/en/fvl/11.jpg;Sharuum the Hegemon
+http://magiccards.info/scans/en/fvl/12.jpg;Sun Quan, Lord of Wu
+http://magiccards.info/scans/en/fvl/13.jpg;Teferi, Mage of Zhalfir
+http://magiccards.info/scans/en/fvl/14.jpg;Ulamog, the Infinite Gyre
+http://magiccards.info/scans/en/fvl/15.jpg;Visara the Dreadful
+http://magiccards.info/scans/en/cmd/93.jpg;Patron of the Nezumi
+http://magiccards.info/scans/en/cmd/108.jpg;Akroma, Angel of Fury
+http://magiccards.info/scans/en/cmd/181.jpg;Animar, Soul of Elements
+http://magiccards.info/scans/en/cmd/184.jpg;Basandra, Battle Seraph
+http://magiccards.info/scans/en/cmd/185.jpg;Bladewing the Risen
+http://magiccards.info/scans/en/cmd/187.jpg;Brion Stoutarm
+http://magiccards.info/scans/en/cmd/189.jpg;Chorus of the Conclave
+http://magiccards.info/scans/en/cmd/191.jpg;Damia, Sage of Stone
+http://magiccards.info/scans/en/cmd/196.jpg;Edric, Spymaster of Trest
+http://magiccards.info/scans/en/cmd/200.jpg;Ghave, Guru of Spores
+http://magiccards.info/scans/en/cmd/204.jpg;Intet, the Dreamer
+http://magiccards.info/scans/en/cmd/206.jpg;Kaalia of the Vast
+http://magiccards.info/scans/en/cmd/207.jpg;Karador, Ghost Chieftain
+http://magiccards.info/scans/en/cmd/208.jpg;Malfegor
+http://magiccards.info/scans/en/cmd/210.jpg;The Mimeoplasm
+http://magiccards.info/scans/en/cmd/213.jpg;Nin, the Pain Artist
+http://magiccards.info/scans/en/cmd/215.jpg;Numot, the Devastator
+http://magiccards.info/scans/en/cmd/216.jpg;Oros, the Avenger
+http://magiccards.info/scans/en/cmd/220.jpg;Riku of Two Reflections
+http://magiccards.info/scans/en/cmd/221.jpg;Ruhan of the Fomori
+http://magiccards.info/scans/en/cmd/227.jpg;Skullbriar, the Walking Grave
+http://magiccards.info/scans/en/cmd/228.jpg;Szadek, Lord of Secrets
+http://magiccards.info/scans/en/cmd/229.jpg;Tariel, Reckoner of Souls
+http://magiccards.info/scans/en/cmd/230.jpg;Teneb, the Harvester
+http://magiccards.info/scans/en/cmd/234.jpg;Vish Kal, Blood Arbiter
+http://magiccards.info/scans/en/cmd/235.jpg;Vorosh, the Hunter
+http://magiccards.info/scans/en/cmd/239.jpg;Wrexial, the Risen Deep
+http://magiccards.info/scans/en/cmd/240.jpg;Zedruu the Greathearted
+http://magiccards.info/scans/en/nph/9.jpg;Elesh Norn, Grand Cenobite
+http://magiccards.info/scans/en/nph/37.jpg;Jin-Gitaxias, Core Augur
+http://magiccards.info/scans/en/nph/73.jpg;Sheoldred, Whispering One
+http://magiccards.info/scans/en/nph/98.jpg;Urabrask the Hidden
+http://magiccards.info/scans/en/nph/115.jpg;Melira, Sylvok Outcast
+http://magiccards.info/scans/en/nph/127.jpg;Vorinclex, Voice of Hunger
+http://magiccards.info/scans/en/nph/128.jpg;Jor Kadeen, the Prevailer
+http://magiccards.info/scans/en/mbs/92.jpg;Thrun, the Last Troll
+http://magiccards.info/scans/en/mbs/96.jpg;Glissa, the Traitor
+http://magiccards.info/scans/en/pd2/10.jpg;Jaya Ballard, Task Mage
+http://magiccards.info/scans/en/som/12.jpg;Kemba, Kha Regent
+http://magiccards.info/scans/en/som/64.jpg;Geth, Lord of the Vault
+http://magiccards.info/scans/en/som/79.jpg;Skithiryx, the Blight Dragon
+http://magiccards.info/scans/en/som/119.jpg;Ezuri, Renegade Leader
+http://magiccards.info/scans/en/fvr/6.jpg;Karn, Silver Golem
+http://magiccards.info/scans/en/dpa/19.jpg;Ascendant Evincar
+http://magiccards.info/scans/en/dpa/49.jpg;Kamahl, Pit Fighter
+http://magiccards.info/scans/en/dpa/74.jpg;Molimo, Maro-Sorcerer
+http://magiccards.info/scans/en/arc/45.jpg;Ryusei, the Falling Star
+http://magiccards.info/scans/en/arc/61.jpg;Kamahl, Fist of Krosa
+http://magiccards.info/scans/en/arc/72.jpg;Verdeloth the Ancient
+http://magiccards.info/scans/en/arc/88.jpg;Kaervek the Merciless
+http://magiccards.info/scans/en/arc/112.jpg;Memnarch
+http://magiccards.info/scans/en/roe/4.jpg;Emrakul, the Aeons Torn
+http://magiccards.info/scans/en/roe/6.jpg;Kozilek, Butcher of Truth
+http://magiccards.info/scans/en/roe/33.jpg;Linvala, Keeper of Silence
+http://magiccards.info/scans/en/roe/107.jpg;Drana, Kalastria Bloodchief
+http://magiccards.info/scans/en/roe/169.jpg;Tuktuk the Explorer
+http://magiccards.info/scans/en/pvc/46.jpg;Gerrard Capashen
+http://magiccards.info/scans/en/pvc/47.jpg;Darigaaz, the Igniter
+http://magiccards.info/scans/en/pvc/48.jpg;Rith, the Awakener
+http://magiccards.info/scans/en/pvc/49.jpg;Treva, the Renewer
+http://magiccards.info/scans/en/wwk/40.jpg;Thada Adel, Acquisitor
+http://magiccards.info/scans/en/wwk/49.jpg;Anowon, the Ruin Sage
+http://magiccards.info/scans/en/wwk/84.jpg;Kazuul, Tyrant of the Cliffs
+http://magiccards.info/scans/en/pds/24.jpg;Sliver Overlord
+http://magiccards.info/scans/en/zen/13.jpg;Iona, Shield of Emeria
+http://magiccards.info/scans/en/zen/53.jpg;Lorthos, the Tidemaker
+http://magiccards.info/scans/en/zen/99.jpg;Kalitas, Bloodchief of Ghet
+http://magiccards.info/scans/en/zen/107.jpg;Ob Nixilis, the Fallen
+http://magiccards.info/scans/en/pch/65.jpg;Rorix Bladewing
+http://magiccards.info/scans/en/pch/92.jpg;Razia, Boros Archangel
+http://magiccards.info/scans/en/pch/108.jpg;Bosh, Iron Golem
+http://magiccards.info/scans/en/arb/109.jpg;Sen Triplets
+http://magiccards.info/scans/en/arb/113.jpg;Thraximundar
+http://magiccards.info/scans/en/arb/117.jpg;Karrthus, Tyrant of Jund
+http://magiccards.info/scans/en/arb/124.jpg;Uril, the Miststalker
+http://magiccards.info/scans/en/arb/128.jpg;Jenara, Asura of War
+http://magiccards.info/scans/en/dvd/1.jpg;Akroma, Angel of Wrath
+http://magiccards.info/scans/en/dvd/13.jpg;Reya Dawnbringer
+http://magiccards.info/scans/en/dvd/44.jpg;Kuro, Pitlord
+http://magiccards.info/scans/en/cfx/71.jpg;Rakka Mar
+http://magiccards.info/scans/en/cfx/101.jpg;Child of Alara
+http://magiccards.info/scans/en/cfx/110.jpg;Gwafa Hazid, Profiteer
+http://magiccards.info/scans/en/ala/179.jpg;Mayael the Anima
+http://magiccards.info/scans/en/ala/193.jpg;Sedris, the Traitor King
+http://magiccards.info/scans/en/fvd/9.jpg;Kokusho, the Evening Star
+http://magiccards.info/scans/en/fvd/10.jpg;Nicol Bolas
+http://magiccards.info/scans/en/fvd/11.jpg;Niv-Mizzet, the Firemind
+http://magiccards.info/scans/en/eve/33.jpg;Ashling, the Extinguisher
+http://magiccards.info/scans/en/eve/128.jpg;Sapling of Colfenor
+http://magiccards.info/scans/en/shm/176.jpg;Sygg, River Cutthroat
+http://magiccards.info/scans/en/shm/214.jpg;Rosheen Meanderer
+http://magiccards.info/scans/en/shm/223.jpg;Wort, the Raidmother
+http://magiccards.info/scans/en/shm/237.jpg;Rhys the Redeemed
+http://magiccards.info/scans/en/shm/260.jpg;Reaper King
+http://magiccards.info/scans/en/mt/55.jpg;Vendilion Clique
+http://magiccards.info/scans/en/mt/65.jpg;Maralen of the Mornsong
+http://magiccards.info/scans/en/mt/135.jpg;Rhys the Exiled
+http://magiccards.info/scans/en/ptc/6.jpg;Lu Bu, Master-at-Arms
+http://magiccards.info/scans/en/ptc/25.jpg;Ink-Eyes, Servant of Oni
+http://magiccards.info/scans/en/ptc/26.jpg;Kiyomaro, First to Stand
+http://magiccards.info/scans/en/ptc/33.jpg;Korlash, Heir to Blackblade
+http://magiccards.info/scans/en/evg/43.jpg;Ib Halfheart, Goblin Tactician
+http://magiccards.info/scans/en/lw/6.jpg;Brigid, Hero of Kinsbaile
+http://magiccards.info/scans/en/lw/149.jpg;Ashling the Pilgrim
+http://magiccards.info/scans/en/lw/248.jpg;Gaddock Teeg
+http://magiccards.info/scans/en/lw/249.jpg;Horde of Notions
+http://magiccards.info/scans/en/lw/250.jpg;Nath of the Gilt-Leaf
+http://magiccards.info/scans/en/lw/251.jpg;Sygg, River Guide
+http://magiccards.info/scans/en/lw/252.jpg;Wort, Boggart Auntie
+http://magiccards.info/scans/en/lw/253.jpg;Wydwen, the Biting Gale
+http://magiccards.info/scans/en/10e/12.jpg;Cho-Manno, Revolutionary
+http://magiccards.info/scans/en/10e/65.jpg;Ambassador Laquatus
+http://magiccards.info/scans/en/10e/66.jpg;Arcanis the Omnipotent
+http://magiccards.info/scans/en/10e/166.jpg;Phage the Untouchable
+http://magiccards.info/scans/en/10e/239.jpg;Squee, Goblin Nabob
+http://magiccards.info/scans/en/10e/279.jpg;Mirri, Cat Warrior
+http://magiccards.info/scans/en/fut/28.jpg;Oriss, Samite Guardian
+http://magiccards.info/scans/en/fut/46.jpg;Venser, Shaper Savant
+http://magiccards.info/scans/en/fut/51.jpg;Linessa, Zephyr Mage
+http://magiccards.info/scans/en/fut/123.jpg;Tarox Bladewing
+http://magiccards.info/scans/en/fut/142.jpg;Baru, Fist of Krosa
+http://magiccards.info/scans/en/fut/157.jpg;Jhoira of the Ghitu
+http://magiccards.info/scans/en/fut/158.jpg;Sliver Legion
+http://magiccards.info/scans/en/pc/3.jpg;Crovax, Ascendant Hero
+http://magiccards.info/scans/en/pc/36.jpg;Braids, Conjurer Adept
+http://magiccards.info/scans/en/pc/75.jpg;Mirri the Cursed
+http://magiccards.info/scans/en/pc/131.jpg;Jedit Ojanen of Efrava
+http://magiccards.info/scans/en/pc/162.jpg;Radha, Heir to Keld
+http://magiccards.info/scans/en/ts/28.jpg;Mangara of Corondor
+http://magiccards.info/scans/en/ts/44.jpg;Tivadar of Thorn
+http://magiccards.info/scans/en/ts/106.jpg;Endrek Sahr, Master Breeder
+http://magiccards.info/scans/en/ts/114.jpg;Lim-Dûl the Necromancer
+http://magiccards.info/scans/en/ts/171.jpg;Norin the Wary
+http://magiccards.info/scans/en/ts/227.jpg;Thelon of Havenwood
+http://magiccards.info/scans/en/ts/237.jpg;Dralnu, Lich Lord
+http://magiccards.info/scans/en/ts/241.jpg;Ith, High Arcanist
+http://magiccards.info/scans/en/ts/243.jpg;Mishra, Artificer Prodigy
+http://magiccards.info/scans/en/ts/245.jpg;Saffi Eriksdotter
+http://magiccards.info/scans/en/ts/246.jpg;Scion of the Ur-Dragon
+http://magiccards.info/scans/en/ts/247.jpg;Stonebrow, Krosan Hero
+http://magiccards.info/scans/en/cs/4.jpg;Darien, King of Kjeldor
+http://magiccards.info/scans/en/cs/27.jpg;Arcum Dagsson
+http://magiccards.info/scans/en/cs/36.jpg;Heidar, Rimewind Master
+http://magiccards.info/scans/en/cs/61.jpg;Haakon, Stromgald Scourge
+http://magiccards.info/scans/en/cs/90.jpg;Lovisa Coldeyes
+http://magiccards.info/scans/en/cs/129.jpg;Garza Zol, Plague Queen
+http://magiccards.info/scans/en/cs/131.jpg;Sek'Kuar, Deathkeeper
+http://magiccards.info/scans/en/cs/135.jpg;Zur the Enchanter
+http://magiccards.info/scans/en/di/110.jpg;Experiment Kraj
+http://magiccards.info/scans/en/di/112.jpg;Grand Arbiter Augustin IV
+http://magiccards.info/scans/en/di/114.jpg;Isperia the Inscrutable
+http://magiccards.info/scans/en/di/117.jpg;Lyzolda, the Blood Witch
+http://magiccards.info/scans/en/di/118.jpg;Momir Vig, Simic Visionary
+http://magiccards.info/scans/en/di/129.jpg;Rakdos the Defiler
+http://magiccards.info/scans/en/gp/103.jpg;Borborygmos
+http://magiccards.info/scans/en/gp/114.jpg;Ghost Council of Orzhova
+http://magiccards.info/scans/en/gp/134.jpg;Teysa, Orzhov Scion
+http://magiccards.info/scans/en/gp/135.jpg;Tibor and Lumia
+http://magiccards.info/scans/en/gp/136.jpg;Ulasht, the Hate Seed
+http://magiccards.info/scans/en/rav/190.jpg;Agrus Kos, Wojek Veteran
+http://magiccards.info/scans/en/rav/196.jpg;Circu, Dimir Lobotomist
+http://magiccards.info/scans/en/rav/225.jpg;Savra, Queen of the Golgari
+http://magiccards.info/scans/en/rav/231.jpg;Sisters of Stone Death
+http://magiccards.info/scans/en/rav/236.jpg;Tolsimir Wolfblood
+http://magiccards.info/scans/en/sok/3.jpg;Celestial Kirin
+http://magiccards.info/scans/en/sok/14.jpg;Kataki, War's Wage
+http://magiccards.info/scans/en/sok/19.jpg;Michiko Konda, Truth Seeker
+http://magiccards.info/scans/en/sok/27.jpg;Rune-Tail, Kitsune Ascendant
+http://magiccards.info/scans/en/sok/31.jpg;Cloudhoof Kirin
+http://magiccards.info/scans/en/sok/35.jpg;Erayo, Soratami Ascendant
+http://magiccards.info/scans/en/sok/41.jpg;Kaho, Minamo Historian
+http://magiccards.info/scans/en/sok/42.jpg;Kami of the Crescent Moon
+http://magiccards.info/scans/en/sok/53.jpg;Sakashima the Impostor
+http://magiccards.info/scans/en/sok/58.jpg;Soramaro, First to Dream
+http://magiccards.info/scans/en/sok/61.jpg;Akuta, Born of Ash
+http://magiccards.info/scans/en/sok/72.jpg;Infernal Kirin
+http://magiccards.info/scans/en/sok/73.jpg;Kagemaro, First to Suffer
+http://magiccards.info/scans/en/sok/78.jpg;Kuon, Ogre Ascendant
+http://magiccards.info/scans/en/sok/81.jpg;Maga, Traitor to Mortals
+http://magiccards.info/scans/en/sok/91.jpg;Adamaro, First to Desire
+http://magiccards.info/scans/en/sok/103.jpg;Homura, Human Ascendant
+http://magiccards.info/scans/en/sok/104.jpg;Iizuka the Ruthless
+http://magiccards.info/scans/en/sok/107.jpg;Jiwari, the Earth Aflame
+http://magiccards.info/scans/en/sok/113.jpg;Skyfire Kirin
+http://magiccards.info/scans/en/sok/121.jpg;Arashi, the Sky Asunder
+http://magiccards.info/scans/en/sok/122.jpg;Ayumi, the Last Visitor
+http://magiccards.info/scans/en/sok/123.jpg;Bounteous Kirin
+http://magiccards.info/scans/en/sok/136.jpg;Masumaro, First to Live
+http://magiccards.info/scans/en/sok/142.jpg;Reki, the History of Kamigawa
+http://magiccards.info/scans/en/sok/145.jpg;Sasaya, Orochi Ascendant
+http://magiccards.info/scans/en/sok/148.jpg;Sekki, Seasons' Guide
+http://magiccards.info/scans/en/sok/151.jpg;Iname as One
+http://magiccards.info/scans/en/bok/7.jpg;Hokori, Dust Drinker
+http://magiccards.info/scans/en/bok/13.jpg;Kentaro, the Smiling Cat
+http://magiccards.info/scans/en/bok/17.jpg;Opal-Eye, Konda's Yojimbo
+http://magiccards.info/scans/en/bok/18.jpg;Oyobi, Who Split the Heavens
+http://magiccards.info/scans/en/bok/19.jpg;Patron of the Kitsune
+http://magiccards.info/scans/en/bok/30.jpg;Yomiji, Who Bars the Way
+http://magiccards.info/scans/en/bok/32.jpg;Chisei, Heart of Oceans
+http://magiccards.info/scans/en/bok/37.jpg;Higure, the Still Wind
+http://magiccards.info/scans/en/bok/40.jpg;Kira, Great Glass-Spinner
+http://magiccards.info/scans/en/bok/45.jpg;Patron of the Moon
+http://magiccards.info/scans/en/bok/58.jpg;Tomorrow, Azami's Familiar
+http://magiccards.info/scans/en/bok/72.jpg;Kyoki, Sanity's Eclipse
+http://magiccards.info/scans/en/bok/81.jpg;Shirei, Shizo's Caretaker
+http://magiccards.info/scans/en/bok/89.jpg;Toshiro Umezawa
+http://magiccards.info/scans/en/bok/90.jpg;Yukora, the Prisoner
+http://magiccards.info/scans/en/bok/104.jpg;Fumiko the Lowblood
+http://magiccards.info/scans/en/bok/107.jpg;Heartless Hidetsugu
+http://magiccards.info/scans/en/bok/110.jpg;Ishi-Ishi, Akki Crackshot
+http://magiccards.info/scans/en/bok/112.jpg;Mannichi, the Fevered Dream
+http://magiccards.info/scans/en/bok/115.jpg;Patron of the Akki
+http://magiccards.info/scans/en/bok/129.jpg;Isao, Enlightened Bushi
+http://magiccards.info/scans/en/bok/130.jpg;Iwamori of the Open Fist
+http://magiccards.info/scans/en/bok/131.jpg;Kodama of the Center Tree
+http://magiccards.info/scans/en/bok/138.jpg;Patron of the Orochi
+http://magiccards.info/scans/en/bok/141.jpg;Sakiko, Mother of Summer
+http://magiccards.info/scans/en/bok/144.jpg;Shizuko, Caller of Autumn
+http://magiccards.info/scans/en/uh/13.jpg;Frankie Peanuts
+http://magiccards.info/scans/en/uh/35.jpg;Johnny, Combo Player
+http://magiccards.info/scans/en/uh/44.jpg;Richard Garfield, Ph.D.
+http://magiccards.info/scans/en/chk/8.jpg;Eight-and-a-Half-Tails
+http://magiccards.info/scans/en/chk/12.jpg;Hikari, Twilight Guardian
+http://magiccards.info/scans/en/chk/19.jpg;Isamaru, Hound of Konda
+http://magiccards.info/scans/en/chk/30.jpg;Konda, Lord of Eiganjo
+http://magiccards.info/scans/en/chk/33.jpg;Masako the Humorless
+http://magiccards.info/scans/en/chk/35.jpg;Myojin of Cleansing Fire
+http://magiccards.info/scans/en/chk/36.jpg;Nagao, Bound by Honor
+http://magiccards.info/scans/en/chk/44.jpg;Sensei Golden-Tail
+http://magiccards.info/scans/en/chk/46.jpg;Takeno, Samurai General
+http://magiccards.info/scans/en/chk/50.jpg;Yosei, the Morning Star
+http://magiccards.info/scans/en/chk/52.jpg;Azami, Lady of Scrolls
+http://magiccards.info/scans/en/chk/66.jpg;Hisoka, Minamo Sensei
+http://magiccards.info/scans/en/chk/72.jpg;Keiga, the Tide Star
+http://magiccards.info/scans/en/chk/74.jpg;Meloku the Clouded Mirror
+http://magiccards.info/scans/en/chk/75.jpg;Myojin of Seeing Winds
+http://magiccards.info/scans/en/chk/98.jpg;The Unspeakable
+http://magiccards.info/scans/en/chk/99.jpg;Uyo, Silent Prophet
+http://magiccards.info/scans/en/chk/114.jpg;He Who Hungers
+http://magiccards.info/scans/en/chk/117.jpg;Horobi, Death's Wail
+http://magiccards.info/scans/en/chk/118.jpg;Iname, Death Aspect
+http://magiccards.info/scans/en/chk/121.jpg;Kiku, Night's Flower
+http://magiccards.info/scans/en/chk/124.jpg;Marrow-Gnawer
+http://magiccards.info/scans/en/chk/126.jpg;Myojin of Night's Reach
+http://magiccards.info/scans/en/chk/143.jpg;Seizan, Perverter of Truth
+http://magiccards.info/scans/en/chk/157.jpg;Ben-Ben, Akki Hermit
+http://magiccards.info/scans/en/chk/160.jpg;Brothers Yamazaki
+http://magiccards.info/scans/en/chk/169.jpg;Godo, Bandit Warlord
+http://magiccards.info/scans/en/chk/176.jpg;Kumano, Master Yamabushi
+http://magiccards.info/scans/en/chk/181.jpg;Myojin of Infinite Rage
+http://magiccards.info/scans/en/chk/186.jpg;Shimatsu the Bloodcloaked
+http://magiccards.info/scans/en/chk/200.jpg;Zo-Zu the Punisher
+http://magiccards.info/scans/en/chk/201.jpg;Azusa, Lost but Seeking
+http://magiccards.info/scans/en/chk/205.jpg;Dosan the Falling Leaf
+http://magiccards.info/scans/en/chk/215.jpg;Iname, Life Aspect
+http://magiccards.info/scans/en/chk/217.jpg;Jugan, the Rising Star
+http://magiccards.info/scans/en/chk/222.jpg;Kodama of the North Tree
+http://magiccards.info/scans/en/chk/223.jpg;Kodama of the South Tree
+http://magiccards.info/scans/en/chk/229.jpg;Myojin of Life's Web
+http://magiccards.info/scans/en/chk/238.jpg;Sachi, Daughter of Seshiro
+http://magiccards.info/scans/en/chk/241.jpg;Seshiro the Anointed
+http://magiccards.info/scans/en/chk/242.jpg;Shisato, Whispering Hunter
+http://magiccards.info/scans/en/chk/244.jpg;Sosuke, Son of Seshiro
+http://magiccards.info/scans/en/5dn/12.jpg;Raksha Golden Cub
+http://magiccards.info/scans/en/ds/69.jpg;Slobad, Goblin Tinkerer
+http://magiccards.info/scans/en/mi/120.jpg;Glissa Sunseeker
+http://magiccards.info/scans/en/frf/90.jpg;Alesha, Who Smiles at Death
+http://magiccards.info/scans/en/ori/43.jpg;Alhammarret, High Arbiter
+http://magiccards.info/scans/en/dtk/2.jpg;Anafenza, Kin-Tree Spirit
+http://magiccards.info/scans/en/ktk/163.jpg;Anafenza, the Foremost
+http://magiccards.info/scans/en/ths/186.jpg;Anax and Cymede
+http://magiccards.info/scans/en/ths/149.jpg;Anthousa, Setessan Hero
+http://magiccards.info/scans/en/frf/149.jpg;Atarka, World Render
+http://magiccards.info/scans/en/jou/146.jpg;Athreos, God of Passage
+http://magiccards.info/scans/en/gtc/143.jpg;Aurelia, the Warleader
+http://magiccards.info/scans/en/avr/6.jpg;Avacyn, Angel of Hope
+http://magiccards.info/scans/en/gtc/147.jpg;Borborygmos Enraged
+http://magiccards.info/scans/en/bng/5.jpg;Brimaz, King of Oreskos
+http://magiccards.info/scans/en/avr/208.jpg;Bruna, Light of Alabaster
+http://magiccards.info/scans/en/ori/135a.jpg;Chandra, Fire of Kaladesh
+http://magiccards.info/scans/en/frf/9.jpg;Daghatar the Adamant
+http://magiccards.info/scans/en/ths/191.jpg;Daxos of Meletis
+http://magiccards.info/scans/en/dtk/216.jpg;Dragonlord Atarka
+http://magiccards.info/scans/en/dtk/217.jpg;Dragonlord Dromoka
+http://magiccards.info/scans/en/dtk/218.jpg;Dragonlord Kolaghan
+http://magiccards.info/scans/en/dtk/219.jpg;Dragonlord Ojutai
+http://magiccards.info/scans/en/dtk/220.jpg;Dragonlord Silumgar
+http://magiccards.info/scans/en/bfz/109.jpg;Drana, Liberator of Malakir
+http://magiccards.info/scans/en/frf/151.jpg;Dromoka, the Eternal
+http://magiccards.info/scans/en/ori/172.jpg;Dwynen, Gilt-Leaf Daen
+http://magiccards.info/scans/en/dgm/68.jpg;Emmara Tandris
+http://magiccards.info/scans/en/bng/145.jpg;Ephara, God of the Polis
+http://magiccards.info/scans/en/ths/85.jpg;Erebos, God of the Dead
+http://magiccards.info/scans/en/dgm/69.jpg;Exava, Rakdos Blood Witch
+http://magiccards.info/scans/en/avr/209.jpg;Gisela, Blade of Goldnight
+http://magiccards.info/scans/en/avr/106.jpg;Griselbrand
+http://magiccards.info/scans/en/ths/17.jpg;Heliod, God of the Sun
+http://magiccards.info/scans/en/ori/19.jpg;Hixus, Prison Warden
+http://magiccards.info/scans/en/ths/91.jpg;Hythonia the Cruel
+http://magiccards.info/scans/en/jou/150.jpg;Iroas, God of Victory
+http://magiccards.info/scans/en/rtr/171.jpg;Isperia, Supreme Judge
+http://magiccards.info/scans/en/ori/60a.jpg;Jace, Vryn's Prodigy
+http://magiccards.info/scans/en/rtr/174.jpg;Jarad, Golgari Lich Lord
+http://magiccards.info/scans/en/bng/148.jpg;Karametra, God of Harvests
+http://magiccards.info/scans/en/jou/151.jpg;Keranos, God of Storms
+http://magiccards.info/scans/en/jou/74.jpg;King Macar, the Gold-Cursed
+http://magiccards.info/scans/en/frf/155.jpg;Kolaghan, the Storm's Fury
+http://magiccards.info/scans/en/ori/104.jpg;Kothophed, Soul Hoarder
+http://magiccards.info/scans/en/jou/152.jpg;Kruphix, God of Horizons
+http://magiccards.info/scans/en/ori/23a.jpg;Kytheon, Hero of Akros
+http://magiccards.info/scans/en/dgm/80.jpg;Lavinia of the Tenth
+http://magiccards.info/scans/en/gtc/174.jpg;Lazav, Dimir Mastermind
+http://magiccards.info/scans/en/ori/106a.jpg;Liliana, Heretical Healer
+http://magiccards.info/scans/en/ths/196.jpg;Medomai the Ageless
+http://magiccards.info/scans/en/dgm/84.jpg;Melek, Izzet Paragon
+http://magiccards.info/scans/en/dka/70.jpg;Mikaeus, the Unhallowed
+http://magiccards.info/scans/en/dgm/85.jpg;Mirko Vosk, Mind Drinker
+http://magiccards.info/scans/en/bng/151.jpg;Mogis, God of Slaughter
+http://magiccards.info/scans/en/bfz/215.jpg;Munda, Ambush Leader
+http://magiccards.info/scans/en/ktk/190.jpg;Narset, Enlightened Master
+http://magiccards.info/scans/en/ori/189a.jpg;Nissa, Vastwood Seer
+http://magiccards.info/scans/en/rtr/183.jpg;Niv-Mizzet, Dracogenius
+http://magiccards.info/scans/en/bfz/216.jpg;Noyan Dar, Roil Shaper
+http://magiccards.info/scans/en/ths/166.jpg;Nylea, God of the Hunt
+http://magiccards.info/scans/en/gtc/182.jpg;Obzedat, Ghost Council
+http://magiccards.info/scans/en/frf/156.jpg;Ojutai, Soul of Winter
+http://magiccards.info/scans/en/bfz/217.jpg;Omnath, Locus of Rage
+http://magiccards.info/scans/en/jou/154.jpg;Pharika, God of Affliction
+http://magiccards.info/scans/en/bng/152.jpg;Phenax, God of Deception
+http://magiccards.info/scans/en/ori/157.jpg;Pia and Kiran Nalaar
+http://magiccards.info/scans/en/ths/172.jpg;Polukranos, World Eater
+http://magiccards.info/scans/en/gtc/188.jpg;Prime Speaker Zegana
+http://magiccards.info/scans/en/ths/135.jpg;Purphoros, God of the Forge
+http://magiccards.info/scans/en/rtr/187.jpg;Rakdos, Lord of Riots
+http://magiccards.info/scans/en/dgm/99.jpg;Ruric Thar, the Unbowed
+http://magiccards.info/scans/en/frf/52.jpg;Shu Yun, the Silent Tempest
+http://magiccards.info/scans/en/ktk/199.jpg;Sidisi, Brood Tyrant
+http://magiccards.info/scans/en/dtk/120.jpg;Sidisi, Undead Vizier
+http://magiccards.info/scans/en/avr/210.jpg;Sigarda, Host of Herons
+http://magiccards.info/scans/en/frf/157.jpg;Silumgar, the Drifting Death
+http://magiccards.info/scans/en/ktk/206.jpg;Surrak Dragonclaw
+http://magiccards.info/scans/en/dtk/210.jpg;Surrak, the Hunt Caller
+http://magiccards.info/scans/en/dgm/107.jpg;Tajic, Blade of the Legion
+http://magiccards.info/scans/en/frf/87.jpg;Tasigur, the Golden Fang
+http://magiccards.info/scans/en/dgm/108.jpg;Teysa, Envoy of Ghosts
+http://magiccards.info/scans/en/dka/24.jpg;Thalia, Guardian of Thraben
+http://magiccards.info/scans/en/ths/66.jpg;Thassa, God of the Sea
+http://magiccards.info/scans/en/ths/206.jpg;Triad of Fates
+http://magiccards.info/scans/en/bng/55.jpg;Tromokratis
+http://magiccards.info/scans/en/rtr/206.jpg;Trostani, Selesnya's Voice
+http://magiccards.info/scans/en/ths/207.jpg;Tymaret, the Murder King
+http://magiccards.info/scans/en/bfz/15.jpg;Ulamog, the Ceaseless Hunger
+http://magiccards.info/scans/en/dgm/112.jpg;Varolz, the Scar-Striped
+http://magiccards.info/scans/en/dgm/115.jpg;Vorel of the Hull Clade
+http://magiccards.info/scans/en/dka/147b.jpg;Withengar Unbound
+http://magiccards.info/scans/en/bng/156.jpg;Xenagos, God of Revels
+http://magiccards.info/scans/en/frf/148.jpg;Yasova Dragonclaw
+http://magiccards.info/scans/en/bfz/162.jpg;Zada, Hedron Grinder
+http://magiccards.info/scans/en/dtk/169.jpg;Zurgo Bellstriker
+http://magiccards.info/scans/en/ktk/214.jpg;Zurgo Helmsmasher
+http://magiccards.info/scans/en/c15/41.jpg;Anya, Merciless Angel
+http://magiccards.info/scans/en/c15/42.jpg;Arjun, the Shifting Flame
+http://magiccards.info/scans/en/c15/43.jpg;Daxos the Returned
+http://magiccards.info/scans/en/c15/44.jpg;Ezuri, Claw of Progress
+http://magiccards.info/scans/en/c15/45.jpg;Kalemne, Disciple of Iroas
+http://magiccards.info/scans/en/c15/46.jpg;Karlov of the Ghost Council
+http://magiccards.info/scans/en/c15/47.jpg;Kaseto, Orochi Archmage
+http://magiccards.info/scans/en/c15/48.jpg;Mazirek, Kraul Death Priest
+http://magiccards.info/scans/en/c15/49.jpg;Meren of Clan Nel Toth
+http://magiccards.info/scans/en/c15/50.jpg;Mizzix of the Izmagnus
+http://magiccards.info/scans/en/c14/35.jpg;Feldon of the Third Path
+http://magiccards.info/scans/en/c14/23.jpg;Ghoulcaller Gisa
+http://magiccards.info/scans/en/c14/9.jpg;Jazal Goldmane
+http://magiccards.info/scans/en/c14/17.jpg;Stitcher Geralf
+http://magiccards.info/scans/en/c14/50.jpg;Titania, Protector of Argoth
+http://magiccards.info/scans/en/cns/41.jpg;Brago, King Eternal
+http://magiccards.info/scans/en/cns/47.jpg;Grenzo, Dungeon Warden
+http://magiccards.info/scans/en/cns/49.jpg;Marchesa, the Black Rose
+http://magiccards.info/scans/en/cns/23.jpg;Muzzio, Visionary Architect
+http://magiccards.info/scans/en/cns/51.jpg;Selvala, Explorer Returned
+http://magiccards.info/scans/en/c13/186.jpg;Derevi, Empyrial Tactician
+http://magiccards.info/scans/en/c13/191.jpg;Gahiji, Honored One
+http://magiccards.info/scans/en/c13/194.jpg;Jeleva, Nephalia's Scourge
+http://magiccards.info/scans/en/c13/198.jpg;Marath, Will of the Wild
+http://magiccards.info/scans/en/c13/201.jpg;Nekusar, the Mindrazer
+http://magiccards.info/scans/en/c13/203.jpg;Oloro, Ageless Ascetic
+http://magiccards.info/scans/en/c13/204.jpg;Prossh, Skyraider of Kher
+http://magiccards.info/scans/en/c13/206.jpg;Roon of the Hidden Realm
+http://magiccards.info/scans/en/c13/213.jpg;Shattergang Brothers
+http://magiccards.info/scans/en/c13/220.jpg;Sydri, Galvanic Genius

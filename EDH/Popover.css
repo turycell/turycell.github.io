@@ -1,0 +1,56 @@
+/* Source: http://mrcoles.com/blog/popover-box-css-border-triangles-cross-browser.
+ * A different implementation is here: http://www.dailycoding.com/Posts/purely_css_popovers.aspx */
+
+.popover {
+    position: absolute;
+/*    left: 200px;
+    top: 60px;*/
+	box-shadow:inset 0px 1px 0px 0px #8a8c93, 0px 0px 30px 5px #000;
+	margin: 20px 0;
+    border-radius: 6px;
+    font-size: 20px;
+	background:-webkit-linear-gradient(#6e727d, #172031 23px, #020c1f 23px);
+	background:-moz-linear-gradient(#6e727d, #172031 23px, #020c1f 23px);
+	color:#ffffff;
+    text-shadow: 0px -1px 0px #191f2a;
+    text-align: center;
+    opacity: 0.0;
+    transition: opacity 0.1s linear;
+   -moz-transition: opacity 0.1s linear;
+   -webkit-transition: opacity 0.1s linear;
+}
+
+.popover .notch-up {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    margin: 0;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+    border-top: 0;
+    border-bottom: 16px solid #6e727d;
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+
+.popover .notch-down {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    margin: 0;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+    border-bottom: 0;
+    border-top: 16px solid #020c1f;
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+
+/*.border-popover { border: 1px solid #c5d9e8;}
+.border-popover .border-notch { border-bottom-color: #c5d9e8; top: -11px;}*/
+
+.border-popover { border: 1px solid #222;}
+.border-popover .border-notch-up { border-bottom-color: #222; top: -16px;}
+.border-popover .border-notch-down { border-top-color: #000; bottom: -16px;}

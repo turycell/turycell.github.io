@@ -1,0 +1,5 @@
+http://magiccards.info/scans/en/sok/35.jpg;Erayo, Soratami Ascendant
+http://magiccards.info/scans/en/sok/103.jpg;Homura, Human Ascendant
+http://magiccards.info/scans/en/sok/78.jpg;Kuon, Ogre Ascendant
+http://magiccards.info/scans/en/sok/27.jpg;Rune-Tail, Kitsune Ascendant
+http://magiccards.info/scans/en/sok/145.jpg;Sasaya, Orochi Ascendant
