@@ -31,7 +31,7 @@
 
 			.card {
 				height: 314px;
-				width: 222px;
+				vertical-align: bottom;
 			}
 
 		</style>
@@ -44,8 +44,8 @@
 			}
 
 			.card {
-				height: 88mm;
-				width: 63mm;
+				height: 83mm;
+				vertical-align: bottom;
 			}
 
 		</style>
@@ -66,6 +66,7 @@
 		<!--
 			var target_image
 			var supported_sets = []
+			var only_on_mtgwtf = ["AER","C16","KLD","CN2","EMN","SOI","OGW","C15","BFZ","ORI","DTK","FRF","C14","KTK"]
 
 			function httpGet(theUrl)
 			{
@@ -104,10 +105,10 @@
 
 				img = 'mtg-card-back.png';
 
-			   /* Let's hard code some cool pictures for the basic lands. */
+				/* Let's hard code some cool pictures for the basic lands. */
 
-			   switch (cards.name)
-			   {
+				switch (cards.name)
+				{
 					case "Plains":
 						img = "https://magidex.com/extstatic/card/UNH/plains.jpg";
 						return img;
@@ -135,11 +136,23 @@
 				for (i = 0; i < cards.editions.length; i++)
 				{
 					var set_code = cards.editions[i].set_id
+					var card_number = cards.editions[i].number
 
 					if (supported_sets.indexOf(set_code) != -1)
 					{
-						img = 'https://magidex.com/extstatic/card/' + set_code + '/' + cards.name.toLowerCase().replace("\u00e6", "ae") + '.jpg'
-						return img;
+						/* We use Magidex for sets up to M15, and mtg.wtf afterwards, since
+						 * the scan quality on Magidex drops dramatically in Fate Reforged. */
+
+						if (only_on_mtgwtf.indexOf(set_code) != -1)
+						{
+							img = 'http://mtg.wtf/cards_hq/'+ set_code.toLowerCase() + '/' + card_number + '.png'
+							return img
+						}
+						else
+						{
+							img = 'https://magidex.com/extstatic/card/' + set_code + '/' + cards.name.toLowerCase().replace("\u00e6", "ae") + '.jpg'
+							return img
+						}
 					}
 				}
 
@@ -149,12 +162,12 @@
 
 				for (i = 0; i < cards.length; i++)
 				{
-					var id = cards.editions[i].multiverseid;
+					var id = cards.editions[i].multiverseid
 
 					if (id != 0)
 					{
-						img = 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=' + id + '\u0026type=card';
-						return img;
+						img = 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=' + id + '\u0026type=card'
+						return img
 					}
 				}
 			}
@@ -170,7 +183,7 @@
 				{
 					/* Parse the string to convert it into an actual array of JSON 
 					 * objects. */
-					var cards = JSON.parse(matching_cards);
+					var cards = JSON.parse(matching_cards)
 
 					if (cards != null)
 					{
@@ -179,7 +192,7 @@
 						for(i = 0; i < cards.length; i++)
 							 if (cards[i].name == name) break;
 
-						i%= cards.length;
+						i %= cards.length;
 
 						var img = document.createElement('img');
 
