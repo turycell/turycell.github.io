@@ -176,6 +176,9 @@
 					to_remove = document.getElementById("standings")
 					if(to_remove) to_remove.parentNode.removeChild(to_remove)
 
+					to_remove = document.getElementById("total_played")
+					if(to_remove) to_remove.parentNode.removeChild(to_remove)
+
 					localStorage.clear()
 				}
 			}
@@ -268,11 +271,9 @@
 								classifica[i].points += 1;
 						}
 
-						if(classifica[i].DCI == opponent)
-						{
-							if (outcome == 2)
+						if (outcome == 2)
+							if(classifica[i].DCI == opponent)
 								classifica[i].points += 1;
-						}
 					}
 				}
 
@@ -284,7 +285,7 @@
 				teammatches = xmlDoc.getElementsByTagName("teammatch")
 				teams = xmlDoc.getElementsByTagName("team")
 
-				function returnTeamMemebrs(teamID)
+				function returnTeamMembers(teamID)
 				{
 					for(w = 0; w < teams.length; w++)
 					{
@@ -317,7 +318,7 @@
 
 					for (i = 0; i < classifica.length; i++)
 					{
-						if(returnTeamMemebrs(team).indexOf(classifica[i].DCI) > -1)
+						if(returnTeamMembers(team).indexOf(classifica[i].DCI) > -1)
 						{
 							if (outcome == 1 || outcome == 3)
 								classifica[i].points += 3;
@@ -325,11 +326,9 @@
 								classifica[i].points += 1;
 						}
 
-						if(returnTeamMemebrs(opposingteam).indexOf(classifica[i].DCI) > -1)
-						{
-							if (outcome == 2)
+						if (outcome == 2)
+							if(returnTeamMembers(opposingteam).indexOf(classifica[i].DCI) > -1)
 								classifica[i].points += 1;
-						}
 					}
 				}
 
