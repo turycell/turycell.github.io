@@ -297,3 +297,20 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
+
+@media print {
+	a[href] {
+		font-weight: bold;
+	}
+	section {
+		page-break-before: always;
+		padding-top: 100px ! important;
+	}
+	section p {
+		text-align: left;
+		font-size: 16px;
+	}
+	img {
+		display: none;
+	}
+}
