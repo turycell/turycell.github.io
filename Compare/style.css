@@ -1,0 +1,101 @@
+* {
+	-webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+	-moz-box-sizing: border-box; /* FF1+ */
+	box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+	max-width: 1200px;
+	margin: auto;
+}
+
+#intro {
+	color: #888;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+}
+
+#intro:hover {
+	color: #111;
+}
+
+ins {
+	background-color: #c6ffc6;
+	text-decoration: none;
+}
+
+del {
+	background-color: #ffc6c6;
+}
+
+div, h3, input, label {
+	margin: 10px;
+}
+
+table th {
+	width: 30%;
+}
+
+textarea {
+	width: 95%;
+	margin: 10px;
+	padding: 10px;
+	overflow: hidden;
+	resize: none;
+
+	font-family: 'Lato', sans-serif;
+	line-height: 1.4em;
+}
+
+.output {
+	width: 95%;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.4em;
+}
+
+#output-before ins {
+	display: none;
+}
+
+#output-after del {
+	display: none;
+}
+
+#button-wrapper {
+	text-align:center;
+}
+
+input {
+	appearance: none;
+	box-shadow: none;
+	border-radius: 0;
+	border: none;
+
+	display: inline-block;
+	width: 350px;
+	margin: 0 20px 0 10px;
+	padding: 10px 45px;
+	font-size: 32px;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.8;
+
+	color: #fff;
+	background-color: #6496c8;
+	text-shadow: -1px 1px #417cb8;
+}
+
+input:hover {
+	background-color: #346392;
+	text-shadow: -1px 1px #27496d;
+}
+
+input:active {
+	background-color: #27496d;
+	text-shadow: -1px 1px #193047;
+}
+
+#comment {
+	width: 100%;
+}
