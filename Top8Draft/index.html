@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+<title>Top 8 Draft</title>
+
+<meta charset="utf-8" />
+
+<!-- Mobile-specific stuff -->
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+
+<link rel="apple-touch-icon" href="homescreen_icon.png" />
+<link rel="stylesheet" href="bracket.css" type="text/css" media="all" />
+
+</head>
+
+<body>
+
+<main>
+    <ul>
+        <li>&nbsp;</li>
+
+        <li class="game game-top"><input text value ="1" onkeyup="document.getElementsByClassName('deg0')[0].innerHTML = this.value;"></li>
+        <li>&nbsp;</li>
+        <li class="game game-bottom"><input text value ="5" onkeyup="document.getElementsByClassName('deg180')[0].innerHTML = this.value;"></li>
+
+        <li>&nbsp;</li>
+
+        <li class="game game-top"><input text value ="3" onkeyup="document.getElementsByClassName('deg90')[0].innerHTML = this.value;"></li>
+        <li>&nbsp;</li>
+        <li class="game game-bottom"><input text value ="7" onkeyup="document.getElementsByClassName('deg270')[0].innerHTML = this.value;"></li>
+
+        <li>&nbsp;</li>
+
+        <li class="game game-top"><input text value ="2" onkeyup="document.getElementsByClassName('deg45')[0].innerHTML = this.value;"></li>
+        <li>&nbsp;</li>
+        <li class="game game-bottom"><input text value ="6" onkeyup="document.getElementsByClassName('deg225')[0].innerHTML = this.value;"></li>
+
+        <li>&nbsp;</li>
+
+        <li class="game game-top"><input text value ="4" onkeyup="document.getElementsByClassName('deg135')[0].innerHTML = this.value;"></li>
+        <li>&nbsp;</li>
+        <li class="game game-bottom "><input text value ="8" onkeyup="document.getElementsByClassName('deg315')[0].innerHTML = this.value;"></li>
+
+        <li>&nbsp;</li>
+
+    </ul>
+
+</main>
+
+<div class='circle-container'>
+    <li class="deg0">1</li>
+    <li class="deg45">2</li>
+    <li class="deg90">3</li>
+    <li class="deg135">4</li>
+    <li class="deg180">5</li>
+    <li class="deg225">6</li>
+    <li class="deg270">7</li>
+    <li class="deg315">8</li>
+</div>
+
+</body>
