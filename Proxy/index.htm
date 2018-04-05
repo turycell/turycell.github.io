@@ -65,8 +65,6 @@
 		<script type="text/javascript">
 		<!--
 			var target_image
-			var supported_sets = []
-			var only_on_mtgwtf = ["AER","C16","KLD","CN2","EMN","SOI","OGW","C15","BFZ","ORI","DTK","FRF","C14","KTK"]
 
 			function httpGet(theUrl)
 			{
@@ -78,156 +76,60 @@
 				return xmlHttp.responseText;
 			}
 
-			function getExpansionSetCodes()
-			{
-				/* We only care about normal booster sets, that have the best support
-				 * on card image providers. So, we retrieve a list of all the released
-				 * sets and pick only the ones with new cards in them. */
-
-				var all_sets = httpGet("https://api.deckbrew.com/mtg/sets")
-				var set_list = JSON.parse(all_sets)
-
-				for (i = 0; i < set_list.length; i++)
-				{
-					if (set_list[i].type == "core" || set_list[i].type == "expansion" || set_list[i].type == "commander" || set_list[i].type == "conspiracy")
-					{
-						supported_sets.push(set_list[i].id)
-					}
-				}
-			}
-
-			function selectPicture(cards)
-			{
-				/* We only care about normal booster sets, that have the best support
-				 * on card image providers. */
-				/* Let's use a card back as the default image. If we encounter an
-				 * error somewhere, we will use this. */
-
-				img = 'mtg-card-back.png';
-
-				/* Let's hard code some cool pictures for the basic lands. */
-
-				switch (cards.name)
-				{
-					case "Plains":
-						img = "https://magidex.com/extstatic/card/UNH/plains.jpg";
-						return img;
-
-					case "Island":
-						img = "https://magidex.com/extstatic/card/UNH/island.jpg";
-						return img;
-
-					case "Swamp":
-						img = "https://magidex.com/extstatic/card/UNH/swamp.jpg";
-						return img;
-
-					case "Mountain":
-						img = "https://magidex.com/extstatic/card/UNH/mountain.jpg";
-						return img;
-
-					case "Forest":
-						img = "https://magidex.com/extstatic/card/UNH/forest.jpg"
-						return img;
-
-					default:
-						break;
-			   }
-
-				for (i = 0; i < cards.editions.length; i++)
-				{
-					var set_code = cards.editions[i].set_id
-					var card_number = cards.editions[i].number
-
-					if (supported_sets.indexOf(set_code) != -1)
-					{
-						/* We use Magidex for sets up to M15, and mtg.wtf afterwards, since
-						 * the scan quality on Magidex drops dramatically in Fate Reforged. */
-
-						if (only_on_mtgwtf.indexOf(set_code) != -1)
-						{
-							img = 'http://mtg.wtf/cards_hq/'+ set_code.toLowerCase() + '/' + card_number + '.png'
-							return img
-						}
-						else
-						{
-							img = 'https://magidex.com/extstatic/card/' + set_code + '/' + cards.name.toLowerCase().replace("\u00e6", "ae") + '.jpg'
-							return img
-						}
-					}
-				}
-
-				/* If Magidex doesn't have it, it's probably from a very recently
-				 * released set. Let's go straight to Gatherer, even though the
-				 * resolution is abysmal. */
-
-				for (i = 0; i < cards.length; i++)
-				{
-					var id = cards.editions[i].multiverseid
-
-					if (id != 0)
-					{
-						img = 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=' + id + '\u0026type=card'
-						return img
-					}
-				}
+			function isNumber(n) {
+				return !isNaN(parseFloat(n)) && isFinite(n);
 			}
 
 			function injectPicture(name)
 			{
-				/* Query the remote database, that returns an array of cards in
-				 * JSON format as a single string. Sadly, it only accept the old
-				 * "Æther" spelling, which exactly noone will be using. */
-				var matching_cards = httpGet("https://api.deckbrew.com/mtg/cards?name=" + name.replace(/Aether/g, "Æther"));
+				/* If the current line is empty, do nothing. */
+				if (name == "") return
 
-				if (matching_cards != "[]")
+				/* Remove leading and trailing spaces and check if the first
+				 * word of the argument is a number or a number followed by 'x'
+				 */
+				name = name.trim()
+
+				var count = name.split(" ")[0]
+
+				if (count.slice(-1) == 'x')
+					count = count.slice(0, -1)
+
+				if (isNumber(count))
 				{
-					/* Parse the string to convert it into an actual array of JSON 
-					 * objects. */
-					var cards = JSON.parse(matching_cards)
-
-					if (cards != null)
-					{
-						/* Let's cross the result array to see if there is an exact
-						 * match. If there is none, we use the first result. */
-						for(i = 0; i < cards.length; i++)
-							 if (cards[i].name == name) break;
-
-						i %= cards.length;
-
-						var img = document.createElement('img');
-
-						img.className = "card";
-						img.id = cards[i].name;
-						img.src = selectPicture(cards[i]);
-
-						img.addEventListener('click', function (e) {
-							target_image = e.target;
-							document.getElementById("custom_image").click();
-						})
-
-						document.body.appendChild(img);
-					}
+					iterations = parseFloat(count)
+					name = name.substr(name.indexOf(" ") + 1);
 				}
 				else
+					iterations = 1
+
+				var img_src = 'mtg-card-back.png'
+
+				var match = httpGet("https://api.scryfall.com/cards/named?fuzzy=" + name)
+				var card = JSON.parse(match)
+
+				if (card.image_uris != undefined)
+					img_src = card.image_uris.border_crop
+
+				for (var i = 0; i < iterations; i++)
 				{
 					var img = document.createElement('img');
 
 					img.className = "card";
 					img.id = name;
-					img.src = 'mtg-card-back.png';
+					img.src = img_src;
 
 					img.addEventListener('click', function (e) {
 						target_image = e.target;
 						document.getElementById("custom_image").click();
 					})
 
-					document.body.appendChild(img);	
+					document.body.appendChild(img);
 				}
 			}
 		
 			function renderImages()
 			{
-				getExpansionSetCodes()
 				var lines = document.getElementById('cardlist').value.split('\n');
 
 				for(var i = 0; i < lines.length; i++)
