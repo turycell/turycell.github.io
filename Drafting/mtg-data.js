@@ -63,6 +63,15 @@ sets = [
 	'Dragons of Tarkir',
 	'Magic Origins',
 	'Battle for Zendikar',
-	'Oath of the Gatewatch'
+	'Oath of the Gatewatch',
+	'Shadows over Innistrad',
+	'Eldritch Moon',
+	'Kaladesh',
+	'Aether Revolt',
+	'Amonkhet',
+	'Hour of Devastation',
+	'Ixalan',
+	'Rivals of Ixalan',
+	'Dominaria'
 ]
 sets.reverse()
