@@ -1,12 +1,10 @@
 {
     "metadata": {
-        "name": "Custom Frame Template",
-        "game": "None",
-        "creator": "Kyle Burton",
-        "created": "November 20, 2022",
-        "updated": "December 13, 2022",
-        "description": "All of this metadata is optional, and really doesn't do anything...",
-        "note": "For a lot of this to work, you'll need to host your assets on the cloud"
+        "name": "Explorers",
+        "game": "Explorers of Ixalan",
+        "creator": "Salvatore La Terra",
+        "created": "December 20, 2022",
+        "updated": "December 20, 2022"
     },
     "context": {
         "ui": {
@@ -30,17 +28,20 @@
             "frame": {
                 "prototype": { "type": "image" },
                 "variants": {
-                    "blue": { "name": "Blue Frame", "src": "Explorers/blue.png", "thumb": "Explorers/thumb-blue.png" },
-                    "green": { "name": "Green Frame", "src": "Explorers/green.png", "thumb": "Explorers/thumb-green.png" },
-                    "red": { "name": "Red Frame", "src": "Explorers/red.png", "thumb": "Explorers/thumb-red.png" },
+                    "blue": { "name": "Blue Frame", "src": "https://turycell.github.io/Explorers/Blue.png", "thumb": "https://turycell.github.io/Explorers/thumb-blue.png" },
+                    "green": { "name": "Green Frame", "src": "https://turycell.github.io/Explorers/Green.png", "thumb": "https://turycell.github.io/Explorers/thumb-green.png" },
+                    "red": { "name": "Red Frame", "src": "https://turycell.github.io/Explorers/Red.png", "thumb": "https://turycell.github.io/Explorers/thumb-red.png" }
+                },
+				"masks": {
+                    "rightHalf": { "type": "image", "name": "Right Half", "src": "general/rightHalf.svg" }
                 }
             }
         },
         "fonts": [
-            {"name": "Beleren", "src": "Explorers/font/beleren.ttf"},
-            {"name": "MPlantin", "src": "Explorers/font/mplantin.ttf"}
+            {"name": "Beleren Small Caps", "src": "https://turycell.github.io/Explorers/font/beleren.ttf"},
+            {"name": "MPlantin", "src": "https://turycell.github.io/Explorers/font/mplantin.ttf"}
         ],
-        "symbolExtension": {
+		"symbolExtension": {
             "symbolSets": [
                 {
                     "symbols": [
@@ -68,35 +69,23 @@
                         "verticalShift": 0.06,
                         "srcPrefix": "custom/11-20-22/symbol/"
                     }
-                },
-                {
-                    "symbols": [
-                        { "src": "palette.svg", "name": ["artist", "palette"]},
-                        { "src": "camera.svg", "name": ["photo", "camera"]}
-                    ],
-                    "prototype": {
-                        "scale": 0.78,
-                        "spacing": 0.2,
-                        "verticalShift": 0.06,
-                        "srcPrefix": "general/icon/"
-                    }
                 }
             ]
         }
     },
     "card": {
         "name": "",
-        "width": 988,
+        "width": 892,
         "height": 772,
         "dependencies": {
             "extensions": ["symbol", "coreTextCode"]
         },
         "data": {
             "type": "group",
-            "masks": [
+			"masks": [
                 {
                     "type": "image",
-                    "src": "general/standardCorners.svg"
+                    "src": "https://turycell.github.io/Explorers/Mask.svg"
                 }
             ],
             "children": [
@@ -110,8 +99,8 @@
                             "name": "Art",
                             "src": "",
                             "default": {
-                                "x": 40,
-                                "y": 203,
+                                "x": 0,
+                                "y": 0,
                                 "z": -100,
                                 "width": 1420,
                                 "height": 1048
@@ -128,50 +117,51 @@
                             "name": "Title",
                             "tags": ["name"],
                             "text": "",
-                            "font": "beleren",
+                            "font": "Beleren Small Caps",
                             "color": "white",
-                            "oneLine": true,
-                            "verticalAlign": "center",
+                            "verticalAlign": "bottom",
                             "size": 80,
-                            "x": 125,
-                            "y": 90,
-                            "width": 1250,
-                            "height": 80
+                            "x": 100,
+                            "y": 200,
+                            "width": 692,
+                            "height": 160,
+                            "align": "center",
+							"filters": [
+                                {
+                                    "type": "shadow",
+                                    "x": 6,
+                                    "y": 6
+                                }
+                            ]
                         },
                         {
                             "type": "text",
                             "name": "Type",
                             "text": "",
-                            "font": "mplantin",
+                            "font": "MPlantin",
                             "color": "black",
                             "oneLine": true,
                             "verticalAlign": "center",
                             "size": 70,
-                            "x": 125,
-                            "y": 1885,
-                            "width": 1250,
-                            "height": 70,
+                            "x": 100,
+                            "y": 386,
+                            "width": 692,
+                            "height": 110,
                             "align": "center"
                         },
                         {
                             "type": "text",
                             "name": "Rules",
                             "text": "",
-                            "font": "mplantin",
+                            "font": "MPlantins",
                             "color": "black",
-                            "size": 60,
-                            "x": 160,
-                            "y": 1300,
-                            "width": 1180,
-                            "height": 500,
-                            "verticalAlign": "center",
-                            "filters": [
-                                {
-                                    "type": "shadow",
-                                    "x": 2,
-                                    "y": 4
-                                }
-                            ]
+                            "size": 40,
+                            "x": 110,
+                            "y": 510,
+                            "width": 668,
+                            "height": 250,
+							"align": "center",
+                            "verticalAlign": "top"
                         }
                     ]
                 }
