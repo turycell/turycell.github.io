@@ -5,8 +5,8 @@
     {
       "src": "/homescreen_icon.png",
       "type": "image/png",
-      "sizes": "600x600",
-	  "purpose": "maskable"
+      "sizes": "512x512",
+	  "purpose": "maskable any"
     }
   ],
   "display": "minimal-ui",
