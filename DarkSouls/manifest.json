@@ -3,7 +3,7 @@
   "name": "Dark Souls Maps",
   "icons": [
     {
-      "src": "/homescreen_icon.png",
+      "src": "icon512.png",
       "type": "image/png",
       "sizes": "512x512",
 	  "purpose": "maskable any"
