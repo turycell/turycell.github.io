@@ -1,0 +1,14 @@
+{
+  "short_name": "Dark Souls",
+  "name": "Dark Souls Maps",
+  "icons": [
+    {
+      "src": "/homescreen_icon.png",
+      "type": "image/png",
+      "sizes": "600x600",
+	  "purpose": "maskable"
+    }
+  ],
+  "display": "minimal-ui",
+  "description": "Don't you dare go hollow."
+}
