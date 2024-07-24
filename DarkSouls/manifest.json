@@ -6,9 +6,9 @@
       "src": "icon512.png",
       "type": "image/png",
       "sizes": "512x512",
-	  "purpose": "maskable any"
+	  "purpose": "maskable"
     }
   ],
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "description": "Don't you dare go hollow."
 }
