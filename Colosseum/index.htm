@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>King of the Colosseum</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Roboto Condensed', sans-serif;
+			line-height: 1.6;
+			color: #e0e0e0;
+			background: #0a0a0a;
+		}
+
+		header {
+			background: #191919;
+			border-bottom: 3px solid #8b0000;
+			box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5);
+			padding: 0 2rem;
+		}
+
+		.header-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			align-items: stretch;
+			gap: 0;
+			min-height: 200px;
+		}
+
+		.header-image {
+			width: 200px;
+			min-width: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+
+		.header-image img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+
+		.header-text {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 2rem 0 2rem 2rem;
+			min-width: 0;
+			background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+		}
+
+		header h1 {
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+			color: #c9a227;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		}
+
+		header p {
+			font-size: 1.1rem;
+			color: #b0b0b0;
+			font-weight: 400;
+			letter-spacing: 1px;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+
+		.columns {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+		}
+
+		.column {
+			background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+			padding: 1.5rem;
+			border-radius: 4px;
+			border: 1px solid #8b0000;
+			box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+		}
+
+		.column h2 {
+			font-family: 'Rajdhani', sans-serif;
+			color: #c9a227;
+			margin-bottom: 1rem;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			border-bottom: 2px solid #8b0000;
+			padding-bottom: 0.5rem;
+		}
+
+		.column p {
+			margin-bottom: 1rem;
+		}
+
+		.img-responsive {
+			width: 100%;
+			height: auto;
+		}
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		ul li {
+			position: relative;
+			padding-left: 1.2em; /* spazio per il puntino */
+		}
+
+		ul li::before {
+			content: "•";
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		@media (max-width: 768px) {
+			.columns {
+				grid-template-columns: 1fr;
+			}
+
+			header {
+				padding: 0 1rem;
+			}
+
+			.header-content {
+				flex-direction: column;
+				min-height: auto;
+			}
+
+			.header-image {
+				width: 100%;
+				height: 150px;
+			}
+
+			.header-text {
+				text-align: center;
+				padding: 1.5rem;
+			}
+
+			header h1 {
+				font-size: 1.8rem;
+			}
+
+			.container {
+				padding: 1rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header-content">
+			<div class="header-image">
+				<img src="logo.jpg">
+			</div>
+			<div class="header-text">
+				<h1>King of the Colosseum</h1>
+				<p>King of the Colosseum è un formato per partite brevi e brutali con liste da 500 punti. </p>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="columns">
+			<div class="column">
+				<h2>Costruzione dell'esercito</h2>
+				<p>Si seguono le normali regole per adunare le armate a livello Incursione, con le seguenti modifiche:</p>
+				
+				<p><ul>
+				<li>Il valore totale dell'armata non può superare i <b>500 punti</b>.
+				<li><b>Devi</b> schierare almeno due unità di Fanteria che non siano Personaggi.<br>
+				<li><b>Devi</b> schierare almeno un Personaggio da selezionare come tuo Generale.<br>
+				<li><b>Non puoi</b> schierare Eroi Epici.<br>
+				<li><b>Non puoi</b> schierare modelli con Resistenza pari o superiore a 10.
+				</ul></p>
+				<p>Per tutto il resto (fazioni, distaccamenti, regole speciali) si seguono i Codex.</p>
+
+				<h2>Campo di battaglia</h2>
+				<p>Il campo di battaglia è un quadrato di 36 pollici di lato, con questo posizionamento dei terreni:</p>
+				<img src="Colosseum.png" class="img-responsive">
+				<p>Le mura circolari sono intransitabili per tutte le unità, sono alte 4 pollici e possono essere scalate, ma nessun modello può fermarsi in cima a esse. Gli elementi scenici all’interno e all’esterno delle mura sono rovine, alte più di 2 pollici e meno di 4, senza impronta. Bloccano sempre la linea di vista, anche verso modelli molto alti, ma possono essere attraversate come se non ci fossero da Fanteria e Bestie.</p>
+
+			</div>
+
+			<div class="column">
+				<h2>Missione</h2>
+				<p>Si usano le regole e le missioni secondarie (esclusivamente missioni tattiche) di Capitulum Adprobavit. Nota che, poiché si tratta di una Incursione, le unità con Linea di Battaglia possono iniziare a svolgere un’Azione anche se hanno Avanzato, e iniziare a svolgere un’Azione non le rende non idonee a sparare.</p>
+				<p>Se si gioca una partita singola, la Missione Primaria è sempre <b>Conquista e Difendi</b>. Se si gioca al meglio delle tre partite, si segue questa procedura:
+				
+				<p><ul>
+				<li>Durante la prima partita, i giocatori spareggiano e il vincitore decide se essere l’Attaccante o il Difensore. Durante le successive, sceglie il giocatore che ha perso la partita precedente.
+				<li>Il Difensore sceglie un Imprevisto da usare per questa battaglia fra <b>Lords of War</b>, <b>Ruinscape</b>, <b>Adapt or Die</b> e <b>Point Blank</b>.
+				<li>L’Attaccante sceglie la Missione Primaria da usare fra <b>Elemento Cardine</b>, <b>Terraformazione</b> e <b>Conquista e Difendi</b>.
+				<li>Il Difensore schiera per primo. Alla fine dello schieramento, i giocatori spareggiano e il vincitore ha il primo turno.
+				</ul></p>
+
+				<h2>Missioni Primarie</h2>
+				<p><b>Elemento Cardine:</b> Guadagni 3PV per ogni obiettivo se non controlli l'obiettivo nella tua zona di schieramento. Se lo controlli, gli altri obiettivi invece valgono 5PV, fino a un massimo di 15PV.</p>
+				<p><b>Terraformazione:</b> Per ogni obiettivo che controlli fuori dalla tua zona di schieramento, puoi svolgere un'Azione per terraformarlo. Guadagni 4PV per ogni obiettivo che controlli, fino a un massimo di 12PV. Alla fine del turno, ogni giocatore guadagna 1PV per ogni obiettivo che ha terraformato.</p>
+				<p><b>Conquista e Difendi:</b> Guadagni 5PV per ogni obiettivo che controlli, fino a un massimo di 15PV.</p>
+
+				<h2>Imprevisti</h2>
+				<p><b>Lords of War:</b> Aggiungi 3 alla caratteristica Attacchi di ciascuna arma equipaggiata da un modello Generale, purché non sia un Veicolo.</p>
+				<p><b>Ruinscape:</b> Tutte le unità possono Muovere Normalmente e Avanzare ignorando gli elementi scenici.</p>
+				<p><b>Adapt or Die:</b> Due volte per battaglia per ciascun giocatore, dopo aver pescato una carta Missione Secondaria, quel giocatore può pescarne una seconda e rimischiare una delle due nel mazzo.</p>
+				<p><b>Point Blank:</b> Tutte le armi da fuoco guadagnano l'abilità [Pistola], purché non siano armi ad Area</p>
+</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
