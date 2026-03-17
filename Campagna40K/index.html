@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campagna 40K Wargaming Point</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      overflow: hidden; /* We'll control scrolling via a CSS class */
+    }
+
+    /* The image itself */
+    #bigImage {
+      cursor: pointer;
+      transition: transform 0.2s ease, max-width 0.2s ease, max-height 0.2s ease;
+      /* Default mode: fit to screen */
+      max-width: 100vw;
+      max-height: 100vh;
+      height: auto;
+      width: auto;
+      display: block;
+    }
+
+    /* When in "actual size" mode */
+    body.fullsize {
+      display: block;
+      overflow: auto;         /* normal scroll */
+    }
+
+    body.fullsize #bigImage {
+      max-width: none;
+      max-height: none;
+      width: auto;            /* actual image width */
+      height: auto;           /* actual image height */
+      margin: 0 auto;         /* center horizontally */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img id="bigImage" src="map.jpg" alt="Mappa della campagna" />
+
+  <script>
+    (function () {
+      const img = document.getElementById("bigImage");
+
+      img.addEventListener("click", () => {
+        // Toggle a class on the body to switch between modes
+        document.body.classList.toggle("fullsize");
+      });
+    })();
+  </script>
+</body>
+</html>
