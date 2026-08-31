@@ -136,6 +136,10 @@
 			top: 0;
 		}
 
+		.footer-image {
+			width: 100%;
+		}
+
 		@media (max-width: 768px) {
 			.columns {
 				grid-template-columns: 1fr;
@@ -178,7 +182,7 @@
 			</div>
 			<div class="header-text">
 				<h1>King of the Colosseum</h1>
-				<p>King of the Colosseum è un formato per partite brevi e brutali con liste da 500 punti. </p>
+				<p>King of the Colosseum è un formato per partite brevi e brutali con liste da 600 punti. </p>
 			</div>
 		</div>
 	</header>
@@ -190,47 +194,39 @@
 				<p>Si seguono le normali regole per adunare le armate a livello Incursione, con le seguenti modifiche:</p>
 				
 				<p><ul>
-				<li>Il valore totale dell'armata non può superare i <b>500 punti</b>.
+				<li>Il valore totale dell'armata non può superare i <b>600 punti</b>.
 				<li><b>Devi</b> schierare almeno due unità di Fanteria che non siano Personaggi.<br>
 				<li><b>Devi</b> schierare almeno un Personaggio da selezionare come tuo Generale.<br>
 				<li><b>Non puoi</b> schierare Eroi Epici.<br>
 				<li><b>Non puoi</b> schierare modelli con Resistenza pari o superiore a 10.
-				<li><b>Non puoi</b> schierare più di una volta la stessa unità, a meno che non abbia Linea di Battaglia, nel qual caso puoi sceglierla fino a due volte.
+				<li><b>Non puoi</b> schierare più di una unità con Resistenza pari a 9.
+				<li><b>Non puoi</b> schierare più di una volta la stessa unità, a meno che non abbia Linea di Battaglia o sia un trasporto dedicato, nel qual caso puoi sceglierla fino a due volte.
+				<li>Puoi scegliere <b>un solo</b> distaccamento, indipendentemente dal suo costo in Punti Distaccamento.
 				</ul></p>
-				<p>Per tutto il resto (fazioni, distaccamenti, regole speciali) si seguono i Codex.</p>
 
-				<h2>Campo di battaglia</h2>
-				<p>Il campo di battaglia è un quadrato di 36 pollici di lato, con questo posizionamento dei terreni:</p>
-				<img src="Colosseum.png" class="img-responsive">
-				<p>Le mura circolari sono intransitabili per tutte le unità, sono alte 4 pollici e possono essere scalate, ma nessun modello può fermarsi in cima a esse. Gli elementi scenici all’interno e all’esterno delle mura sono rovine, alte più di 2 pollici e meno di 4, senza impronta. Bloccano sempre la linea di vista, anche verso modelli molto alti, ma possono essere attraversate come se non ci fossero da Fanteria e Bestie.</p>
-
+				<h2>Missione</h2>
+				<p>Si usano le regole e le missioni secondarie (esclusivamente missioni tattiche) di Armageddon. La missione primaria dipende dall'incrocio fra le disposizioni dei due eserciti, come di norma. Nota che, poiché si tratta di una Incursione, le unità con Linea di Battaglia possono iniziare a svolgere un’Azione anche se hanno Avanzato, e iniziare a svolgere un’Azione non le rende non idonee a sparare.</p>
+				
+				<p><ul>
+				<li>Dopo aver rivelato le liste, il giocatore che ha speso meno Punti Distaccamento sceglie un Imprevisto da usare per questa battaglia fra tutti quelli di Armageddon. In caso di parità, i giocatori spareggiano e la scelta spetta al vincitore.
+				<li>Durante la prima partita, i giocatori spareggiano e il vincitore decide se essere l’Attaccante o il Difensore. Durante le successive, sceglie il giocatore che ha perso la partita precedente.
+				<li>La Missione Primaria da giocare viene selezionata confrontando le disposizioni dei due giocatori.
+				<li>Il Difensore schiera per primo. Alla fine dello schieramento, i giocatori spareggiano e il vincitore ha il primo turno.
+				</ul></p>
 			</div>
 
 			<div class="column">
-				<h2>Missione</h2>
-				<p>Si usano le regole e le missioni secondarie (esclusivamente missioni tattiche) di Capitulum Adprobavit. Nota che, poiché si tratta di una Incursione, le unità con Linea di Battaglia possono iniziare a svolgere un’Azione anche se hanno Avanzato, e iniziare a svolgere un’Azione non le rende non idonee a sparare.</p>
-				<p>Se si gioca una partita singola, la Missione Primaria è sempre <b>Conquista e Difendi</b>. Se si gioca al meglio delle tre partite, si segue questa procedura:
-				
-				<p><ul>
-				<li>Durante la prima partita, i giocatori spareggiano e il vincitore decide se essere l’Attaccante o il Difensore. Durante le successive, sceglie il giocatore che ha perso la partita precedente.
-				<li>Il Difensore sceglie un Imprevisto da usare per questa battaglia fra <b>Lords of War</b>, <b>Ruinscape</b>, <b>Adapt or Die</b> e <b>Point Blank</b>.
-				<li>L’Attaccante sceglie la Missione Primaria da usare fra <b>Elemento Cardine</b>, <b>Terraformazione</b> e <b>Conquista e Difendi</b>.
-				<li>Il Difensore schiera per primo. Alla fine dello schieramento, i giocatori spareggiano e il vincitore ha il primo turno.
-				</ul></p>
-
-				<h2>Missioni Primarie</h2>
-				<p><b>Elemento Cardine:</b> Guadagni 3PV per ogni obiettivo se non controlli l'obiettivo nella tua zona di schieramento. Se lo controlli, gli altri obiettivi invece valgono 5PV, fino a un massimo di 15PV.</p>
-				<p><b>Terraformazione:</b> Per ogni obiettivo che controlli fuori dalla tua zona di schieramento, puoi svolgere un'Azione per terraformarlo. Guadagni 4PV per ogni obiettivo che controlli, fino a un massimo di 12PV. Alla fine del turno, ogni giocatore guadagna 1PV per ogni obiettivo che ha terraformato.</p>
-				<p><b>Conquista e Difendi:</b> Guadagni 5PV per ogni obiettivo che controlli, fino a un massimo di 15PV.</p>
-
-				<h2>Imprevisti</h2>
-				<p><b>Lords of War:</b> Aggiungi 3 alla caratteristica Attacchi di ciascuna arma equipaggiata da un modello Generale, purché non sia un Veicolo.</p>
-				<p><b>Ruinscape:</b> Tutte le unità possono Muovere Normalmente e Avanzare ignorando gli elementi scenici.</p>
-				<p><b>Adapt or Die:</b> Due volte per battaglia per ciascun giocatore, dopo aver pescato una carta Missione Secondaria, quel giocatore può pescarne una seconda e rimischiare una delle due nel mazzo.</p>
-				<p><b>Point Blank:</b> Tutte le armi da fuoco guadagnano l'abilità [Pistola], purché non siano armi ad Area</p>
-</p>
+				<h2>Campo di battaglia</h2>
+				<p>Il campo di battaglia è un quadrato di 36 pollici di lato, con questo posizionamento dei terreni:</p>
+				<img src="Colosseum2026.jpg" class="img-responsive">
+				<p>Tutti i muri sono elementi di terreno <b>fitti</b> e <b>compatti</b>, e sono alti 3 pollici e mezzo.</p>
+				<p>Le zone di schieramento si estendono per <b>8 pollici</b> oltre il bordo del tavolo di ciscun giocatore.</p>
+				<p>Le aree semicircolari e i muri dell'arena fanno parte dello stesso obiettivo, il che significa che gli obiettivi possono essere controllati toccando le mura e che le lunette bloccano la linea di vista. L'obiettivo circolare al centro è un'area di terreno senza alcun elemento, il che significa che fornisce copertura ma <b>non</b> blocca la linea di vista.</p>
+				<p>Il muro che fa parte degli obiettivi nelle zone di schieramento ha la parte centrale più bassa, per cui è possibile tracciare una linea di vista da un obiettivo all'altro.</p>
 			</div>
 		</div>
 	</div>
+
+	<img src="Colosseum.webp" class="footer-image">
 </body>
 </html>
